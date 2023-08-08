@@ -1,0 +1,3 @@
+https://www.cakebuild.net/docs/getting-started/setting-up-a-new-frosting-project
+dotnet tool install ElectronNET.CLI -g
+electronize build /target win
