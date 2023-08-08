@@ -1,0 +1,27 @@
+﻿@page
+@model RapGame.Pages.AdditionalContent.IntroducingPageModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowSoundButton = false;
+    ViewBag.ShowButtom = false;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8  align-self-center">
+            <div class="display-1"><b>Let’s up the challenge</b></div>
+        </div>
+
+        <div class="col-4">
+            <img class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <button id="Frame80Template:@Model.Setting.FrameNumber:@Model.Setting.EmotionForRap" style="font-size:50px" class="btn btn-lg btn-dark mt-1" type="submit" onclick="GoTo(this.id)">
+        Next
+    </button>
+</div>
+
+<script src="~/js/game5.js"></script>

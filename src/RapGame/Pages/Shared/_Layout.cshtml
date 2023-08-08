@@ -1,0 +1,129 @@
+﻿@using Microsoft.AspNetCore.Http
+@using RapGame.Utils
+@using System.Reflection
+@inject MediaHelper mediaPath
+
+@{
+    var soundPath = mediaPath.GetMediaPath(Model.MediaData.PatchToSound);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - ElectronRazorPage</title>
+
+    <link rel="stylesheet" href="~/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="~/css/animate.css" />
+</head>
+
+<body>
+
+        @if (!String.IsNullOrEmpty(Model.MediaData.PatchToAdditionalSound))
+    {
+        var additionalSoundPath = mediaPath.GetMediaPath(Model.MediaData.PatchToAdditionalSound);
+        <audio id="additional_audio" value='@additionalSoundPath' loop="loop"></audio>
+    }
+
+    <div class="row" id="layoutTopPanel">
+
+        @if (ViewBag.ShowLogoutButtom ?? true)
+        {  
+            <div  class="col-1">
+                <form method="post">
+                <div id = "dropdownmenu" class="dropdown">
+      <button  class="btn btn-warning dropdown-toggle btn-lg m-1" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Logout
+  </button>
+  <ul class="dropdown-menu" style="font-size:2rem">
+    <li><a class="dropdown-item" href='Frame3'>Sign Out</a></li>
+    <li><a class="dropdown-item" href="#" onclick="window.close()">Close</a></li>
+  </ul>
+</div>
+   </form>
+            </div>
+           @* <div class="col-1">
+                <form method="post">
+                    <button class="m-1 btn btn-warning btn-lg" asp-page-handler="Logout">Logout</button>
+                </form>
+            </div>*@
+        }
+        @if (ViewBag.ShowSoundButton ?? true)
+        {
+            <div class="col-2">
+                <button id="audioBtn" class="m-1" onclick="play('@soundPath' )" >
+                    <img id="audioImgSound" src="/img/sound.png" width="60" hight="60" />
+                    <img id="audioImgPause" src="/img/pause.png" style="display:none" width="60" hight="60" />
+                </button>
+            </div>
+        }
+        <div class="col-1">
+            4.0.3
+        </div>     
+    </div>
+    @RenderBody()
+
+    @if (ViewBag.ShowButtom ?? true)
+    {
+        <div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+            <form method="post" asp-page="Index">
+                <button style="font-size:50px" id="sumbmitBtn" class="btn btn-lg btn-dark mt-1" type="submit" asp-page-handler="GoToNextPage" disabled="disabled">
+                    Next
+                </button>
+            </form>
+        </div>
+    }
+    @if (ViewBag.ShowMicsCounter ?? false)
+    {
+        <div class="position-absolute top-0 end-0 pt-2 pe-2">
+            <div class="col align-self-center  border border-2 border-success bordergreen">
+                <div id="end" class="row">
+                    <div class="col-6">
+                            <img class="img w-10 m-2" src="/img/Mystics.png" />
+                    </div>
+
+                    <div class="col-6 pe-3">
+                        <h3 class="pt-5">You have</h3>
+                        <h3>@Model.CountOfMysticMics/50</h3>
+                        <h3>Mystic Mics</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</body>
+<script src="~/js/sound.js"></script>
+<script src="~/js/popper.min.js"></script>
+<script src="~/js/bootstrap.js"></script>
+<script src="~/js/jquery.bubble.text.js"></script>
+<script src="~/js/jquery-3.6.0.min.js" onload="window.$ = window.jQuery = module.exports;" asp-append-version="true"></script>
+<script src="~/js/jquery.dataTables.js" onload="window.$ = window.jQuery = module.exports;" asp-append-version="true"></script>
+<script src="~/js/admin.js"></script>
+<script src="~/js/site.js"></script>
+<script src="~/js/leader-line.min.js"></script>
+<script src="~/js/Arrow15frame.js"></script>
+<script src="~/js/game1.js"></script>
+<script src="~/js/arrow20frame.js"></script>
+<script src="~/js/range_frame17.js"></script>
+<script src="~/js/game3.js" defer></script>
+<script src="~/js/game4.js" defer></script>
+<script src="~/js/game5.js" defer></script>
+<script src='js/bootstrap.min.js'></script>
+<script src='js/bootstrap.bundle.min.js'></script>
+<script src="~/js/game9.js" defer></script>
+<script src="~/js/game11.js"></script>
+
+@*<script>
+    $(document).ready(function() {
+<script src="~/js/leader-line.min.js"></script>
+<script src="~/js/Arrow15frame.js"></script>
+<script src="~/js/game1.js"></script>
+)
+}
+    </script>*@
+
+</html>
