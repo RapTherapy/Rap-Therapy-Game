@@ -1,0 +1,41 @@
+﻿@page
+@model RapGame.Pages.StudentReportModel
+@{
+    ViewData["Title"] = "Student report page";
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowSoundButton = false;
+    ViewBag.ShowLogoutButtom = false;
+}
+
+<div class="container">
+        <div class="row justify-content-center pt-5">
+        <div class="offset-3 col">
+            <form method="post">
+               <button id="sumbmitBtn" class="btn btn-lg btn-dark mt-1" type="submit" asp-page-handler="GoToNextPage">
+           back to admin    
+        </button>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center pt-5">
+        <div class="offset-1 col-7">
+            <table id="example" class="table table-warning table-hover table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th class="text-center"><b>Name of student report </b></th>
+                        <th class="text-center">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < Model.Student.FeelingsReports.Count; i++)
+                    {
+                        <tr>
+                            <th class="text-center">Report number @(i+1)</th>
+                            <th class="text-center">@Model.Student.FeelingsReports[i].FeellingsValue</th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

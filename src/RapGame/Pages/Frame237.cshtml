@@ -1,0 +1,48 @@
+﻿@page
+@model RapGame.Pages.Frame237Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowButtom = false;
+}
+<link rel="stylesheet" href="~/css/TimerGame10.css">
+<div class="container z-100 mt-5">
+    <div class="row">
+        <div class="col-4 text-center offset-4">
+        <button  style="border: none;background: none;" onclick="start(this)"><div id="app"></div></button>
+        </div>
+        <div id="display" class="text-center pt-5" >
+            @for (int i = 0; i < Model.GameData.GameData.Count; i++)
+            {
+                    <div id="@i" class="row @(i == 0 ? "" : "d-none")">
+                    <div class="display-1">
+                        <b>@Model.GameData.GameData[i].Line</b>
+                    </div>
+
+                    <div class="pt-5 border-bottom border-dark">
+                                                <input class="display-1" style=" border: none; outline: none; width:100%; font-size:70px; background-color:rgb(252, 235, 192);" oninput="verification(this)"  onkeypress="return (this.innerText.length <= 60)"/>
+                    </div>
+
+                        <div class="row pt-5" id="example+@i">
+                        @foreach (var item in Model.GameData.GameData[i].WordsHints)
+                        {
+                            <div class="col-4">
+                                <button type="button" class="btn btn-outline-dark btn-lg borderblack" style="font-size:100px;">@item</button>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalBadWord" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>You cannot use that word</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+

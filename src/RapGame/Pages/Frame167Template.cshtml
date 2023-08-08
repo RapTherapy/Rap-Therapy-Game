@@ -1,0 +1,67 @@
+﻿@page
+@model RapGame.Pages.Frame167TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false; 
+}
+
+<div class="container-fluid">
+    <div class="row align-items-end">
+        <div id="box" class="col-3 offset-1">
+    <div class="display-5 text-center p-3 border-3 border-warning borderred">
+        <b>Drag and drop the <br /> correct ending to <br /> the simile</b>
+    </div>
+    </div>
+        <div class="col-4 text-center">         
+            <img class="img preserve-width w-26" src="@mediaHelper.GetMediaPath(Model.GameData.PathToImage)" />
+        </div>
+    </div>
+    <div class="container">
+</div>
+    <div class="row pt-5" style="margin-left: 22rem">
+        @if (Model.GameData.IsTheStartOfaSentence)
+        {
+            <div id="Sentence" class="col-8 offset-2 ">
+                    <div class="display-2" style="float: left;">@Model.GameData.Sentence</div>
+                    <div class="border-4 border-bottom border-dark ms-2 display-2" style="float: left; width:30rem; height: 5rem;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+        }
+        else
+        {
+            <div id="Sentence" class="col-8 offset-2 ">
+                    <div class="border-4 border-bottom border-dark ms-2 display-2" style="float: left; width:30rem; height: 5rem;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="display-2" style="float: left;">@Model.GameData.Sentence</div>
+                </div>
+        }
+    </div>
+
+    <div id="answers" class="row pt-5" style="margin-left: 10rem">
+        @for (int i = 0; i < Model.GameData.Answers.Count; i++)
+        {
+                <div id="@i:@Model.GameData.Answers[i].IsAnsweredCorrect.ToString()" class="col-5 display-4 text-center border border-3 border-dark borderblack m-3 p-3" draggable="true" ondragstart=drag(event)>@Model.GameData.Answers[i].Answer</div>
+        }
+    </div>
+</div>
+
+
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame167Template">
+        <button style="font-size:50px" id="next" class="btn btn-lg btn-dark mt-1 d-none" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+
+<div class="modal fade" id="incorrectAnswerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div id="message" class="display-5" style="color: black"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/game8.js"></script>

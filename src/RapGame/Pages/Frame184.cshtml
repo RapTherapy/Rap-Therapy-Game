@@ -1,0 +1,98 @@
+﻿@page
+@model RapGame.Pages.Frame184Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+}
+<div class="container-fluid text-center h-100">
+    <div class="row mt-5 display-4">
+        <b>
+            Type an 8 bar rap using the
+            <br>
+            words at the end of the lines
+        </b>
+    </div>
+    <div class="row" id=" finish">
+        <div class=" col-xl-8 offset-2 align-items-center display-1" id="finish">
+            @for (int i = 0; i < @Model.Data.CountOfRow; i++)
+            {
+                if ((i + 1) % 4 == 0)
+                {
+                                            <div class="border-bottom border-dark ms-2 display-4 mb-3" style=" height: 4rem;" ondrop="drop(event)" ondragover="allowDrop(event)" contenteditable="true" oninput="verification(this)"  onkeypress="return (this.innerText.length <= 60)">
+                                        
+                    </div>
+
+                }
+                else
+                {
+                                                                    <div class="border-bottom border-dark ms-2 display-4" style=" height: 4rem;" ondrop="drop(event)" ondragover="allowDrop(event)" contenteditable="true" oninput="verification(this)"  onkeypress="return (this.innerText.length <= 60)" ></div>
+                }
+            }
+        </div>
+    </div>
+    <div class="row  h-100 align-items-center  text-center mt-5" id="words">
+        @for (int i = 0; i < @Model.Data.CountOfRow; i++)
+        {
+            <div class="col">
+                <div id="@(i).@Model.Data.Words[i].Id" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color: @Model.Data.Words[i].Color" draggable=true ondragstart=drag(event)>
+                    @Model.Data.Words[i].Word
+                </div>
+            </div>
+        }
+    </div>
+</div>
+@*<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #F0E2B6">
+            <div class="modal-body text-center">
+                <h2>Error Answer, try again</h2>
+            </div>
+            <div class="modal-footer" style="background-color: #F5DEB3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalBadWord" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #F0E2B6">
+            <div class="modal-body text-center">
+                <h2>You cannot use that word</h2>
+            </div>
+            <div class="modal-footer" style="background-color: #F5DEB3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Are you sure? <br>Try again. <br></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalBadWord" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>You cannot use that word</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame17">
+        <button style="font-size:50px" id="sumbmitBtn" class="btn btn-lg btn-dark mt-1 d-none" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+     <script src="~/js/game7.js"></script>
+     <script src="~/js/leader-line.min.js"></script>
+<script src="~/js/gameframe184.js"></script>
+

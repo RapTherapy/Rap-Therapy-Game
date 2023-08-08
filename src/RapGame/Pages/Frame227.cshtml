@@ -1,0 +1,97 @@
+﻿@page
+@model RapGame.Pages.Frame227Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowMicsCounter = false;
+}
+<div class="container-fluid">
+    <div class="row mt-2">
+        <div class="col-4 text-center">
+            <img class="img w-30" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])" />
+        </div>
+        <div class="col-8">
+            <div class="row z-130">
+                <div class="col-4">
+                    <p style="transform:rotate(330deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+                <div class="col-4">
+                    <p style="transform:rotate(340deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+                <div class="col-4">
+                    <p style="transform:rotate(25deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+            </div>
+            </dv>
+            <div class="row  z-130">
+                <div class="col-4 mt-5">
+                    <p style="transform:rotate(15deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+                <div class="col-4 mt-5">
+                    <p style="transform:rotate(15deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+                <div class="col-4 mt-5">
+                    <p style="transform:rotate(-20deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+            </div>
+            <div class="row  z-130">
+                <div class="col-4 mt-5">
+                    <p style="transform:rotate(335deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+                <div class="col-4 mt-5">
+                    <p style="transform:rotate(335deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+                <div class="col-4 mt-5">
+                    <p style="transform:rotate(0deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+            </div>
+            <div class="row  z-130">
+                <div class="offset-1 col-4 mt-5">
+                    <p style="transform:rotate(335deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+            </div>
+            <div class="row  z-130">
+                <div class="offset-1 col-4 mt-5">
+                    <p style="transform:rotate(15deg);float:left" class="display-3 text-start"><b>HA HA HA</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row mt-1 ">
+    <div class="col-8">
+        <div class="row z-130">
+            <div class="col-4 ms-5" style="transform:rotate(335deg);float:left">
+                <p class="display-3 text-start"><b>HA HA HA</b></p>
+                <p class="display-3 text-center"><b>HA HA HA</b></p>
+            </div>
+            <div class="col-4 " style="transform:rotate(-5deg);float:left">
+                <p class="display-3 text-start"><b>HA HA HA</b></p>
+                <p class="display-3 text-center"><b>HA HA HA</b></p>
+            </div>
+            <div class="col-3  mt-4 pt-5">
+                <p class="display-3 text-start" style="transform:rotate(35deg);float:left"><b>HA HA HA</b></p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="position-absolute bottom-0 end-0 pb-5 mb-5 me-5 pe-5">
+    <div class="col align-self-center  border border-2 border-success bordergreen mb-5">
+        <div id="end" class="row align-items-center">
+            <div class="col-5">
+                <img class="img w-20 mb-4 mt-4 me-3" src="/img/mystics.png" />
+            </div>
+
+            <div class="col-7   ps-5  display-4 text-start">
+                <b>
+                    You have
+                    <br>
+                    @Model.CountOfMysticMics/50
+                    <br>
+                    Mystic Mics
+                </b>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+﻿@page
+@model RapGame.Pages.Frame156Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+}
+<div class="container-fluid text-center h-100 mt-5">
+    <div class="row pt-5 h-100 align-items-center mt-5 ">
+    </div>
+    <div class="row pt-5 h-100 align-items-center mt-5 ">
+        <div class=" col-xl-8 align-items-center display-1">
+            <b>How about this one…​</b>
+        </div>
+        <div class=" col-xl-4">
+            <img class="img w-30 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>

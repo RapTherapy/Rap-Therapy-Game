@@ -1,0 +1,17 @@
+﻿@page
+@model RapGame.Pages.Frame226TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+}
+<div class="container-fluid pt-5 animate__animated animate__fadeInUp">
+    <div class="row">
+        <div class="col-4">
+            <img class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])"/>
+        </div>
+
+        <div class="col-8">
+            @Html.Raw(Model.TextForFrame)
+        </div>
+    </div>
+</div>

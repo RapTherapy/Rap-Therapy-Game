@@ -1,0 +1,19 @@
+﻿@page
+@model RapGame.Pages.Frame250
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+}
+<link rel="stylesheet" href="~/css/TimerFrame234.css">
+<div class="container-fluid pt-5 animate__animated animate__fadeInUp">
+    <div class="row">
+        <div class="col-4">
+            <img class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])"/>
+        </div>
+
+        <div class="col-8 align-self-center">        
+                   <div id="app" class="text-center mt-5 col-4 offset-4"></div>
+        </div>
+    </div>
+</div>
+<script src="~/js/frame250.js"></script>

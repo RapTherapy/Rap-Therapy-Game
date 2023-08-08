@@ -1,0 +1,60 @@
+﻿@page
+@model RapGame.Pages.Frame269Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+}
+<div class="container-fluid text-center h-100">
+    <div class="row  display-4">
+        <div class="col-4 offset-4 text-center display-2" <b>
+             I often feel​
+            </b>
+        </div>
+        <div class="col-6 offset-3 mt-2 border border-danger border-3 text-center borderred display-5">
+            <b>Write a rap titled “I often feel”. Make sure  
+            <br>
+           you write how you feel! Aim for 16 bars.​</b>
+        </div>
+    </div>
+
+    <div class="row mt-2" id=" finish">
+        <div class=" col-xl-3  align-self-center display-1" id="finish">
+            <button id="startBtnFrame137" class="btn" @*onclick="playAudioForFrame137('@currentAudio')*@>
+                <img class="pt-5 btn" style="width:300px; height:300px" src="~/img/gameSound.png"></button>
+        </div>
+
+
+        <div class=" col-xl-6  align-items-center display-1 mt-5" id="finish">
+            @for (int i = 0; i < 16; i++)
+            {
+                if ((i + 1) % 4 == 0)
+                {
+                                    <div id ="@(i)"class="border-bottom border-dark ms-2 display-6 mb-5" style=" height: 2.5rem;" ondrop="drop(event)"
+                ondragover="allowDrop(event)" contenteditable="true" oninput="verification(this)"
+                onkeypress="return (this.innerText.length <= 50)">
+
+                            </div>
+
+                }
+                else
+                {
+                                    <div id ="@(i)" class="border-bottom border-dark ms-2 display-6" style=" height: 2.5rem;" ondrop="drop(event)"
+                ondragover="allowDrop(event)" contenteditable="true" oninput="verification(this)"
+                onkeypress="return (this.innerText.length <= 50)"></div>
+                }
+            }
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalBadWord" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>You cannot use that word</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="~/js/gameframe269.js"></script>

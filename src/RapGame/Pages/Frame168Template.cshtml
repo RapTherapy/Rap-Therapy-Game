@@ -1,0 +1,22 @@
+﻿@page
+@model RapGame.Pages.Frame168TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <div class=" offset-4 col-4 text-center">
+            <img cclass="img w-40" src="@mediaHelper.GetMediaPath(Model.GameData.PathToImage)" />
+        </div>
+    </div>
+    <div id ="lastAnimation" class="row mt-5">
+        <div class="col-6 offset-3 display-2 text-center">
+            @Model.Strings
+        </div>
+    </div>
+</div>
+
+
+<script src="~/js/game8.js"></script>

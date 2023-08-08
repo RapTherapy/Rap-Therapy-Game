@@ -1,0 +1,31 @@
+﻿@page
+@model RapGame.Pages.Frame267Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+     ViewData["Title"] = Model.MediaData.Title;
+}
+
+<div class="container-fluid z-110">
+    <div class="row">
+        <div class="col-8 align-self-center">
+            <div class="row animate__animated animate__slow animate__fadeInUp">
+                <div class="col-8 offset-2 display-3 text-center">
+                    <b>I would like you to write one more </b>
+                    <br>
+                    <b>rap and after you write this rap,</b>
+                    <br>
+                     <b>rap and after you write this rap,</b>
+                    <br>
+                     <b>make sure you wait for the next</b>
+                    <br>
+                    <b>page so you can download your</b>
+                      <br>
+                      <b>you write about in your own time!</b>
+                </div>
+            </div>
+</div>
+        <div class="col-4 animate__animated animate__slow animate__fadeInUp">
+            <img class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>
