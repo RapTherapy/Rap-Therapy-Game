@@ -1,0 +1,31 @@
+﻿@page
+@model RapGame.Pages.AdditionalContent.AdditionalContentPageGame9Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowLogoutButtom = false;
+}
+
+<div class="container-fluid mt-5">
+    <div class="row align-items-center">
+        <div class="col-8 text-center ms-5">
+            <div class="row z-110 display-2 text-start">
+                <div class="col-8 offset-3">
+                <b>Let’s see if you can
+                    <br>
+                    continue the challenge
+                    <br>
+                    writing raps without the
+                    <br>
+                    words being coloured!
+                    </div>
+                </b>
+            </div>
+        </div>
+
+        <div class="col-3">
+            <img class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+   
+</div>
+</div>

@@ -1,0 +1,23 @@
+﻿@page
+@model RapGame.Pages.AdditionalContent.AdditionalContentPageModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowLogoutButtom = false;
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container-fluid mt-5 pt-5">
+    <div class="row align-items-center">
+        <div class="col-8 text-center ms-5">
+            <div class="row z-110">
+                @Html.Raw(Model.TextForFrame)
+            </div>
+        </div>
+
+        <div class="col-3">
+            <img class="img w-35 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+   
+</div>
+</div>

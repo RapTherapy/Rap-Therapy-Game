@@ -1,0 +1,33 @@
+﻿@page
+@model RapGame.Pages.AdditionalContent.GameModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowSoundButton = false;
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-8 text-center ps-10">
+            <div class="display-2"><b>@Model.Message</b></div>
+
+            <div class="display-5 text-center pt-5" style="cursor:pointer;">
+                <div class="offset-4 col-4 border-3 border-danger borderred p-2" onclick="back('@Model.BackToFrame')" >
+                    <b>Click here to <br /> try again</b>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4">
+            <img class="img w-40 preserve-width mt-7" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>
+
+<script>
+    function back(frameName) {
+        let url = window.location.protocol + "//" + window.location.host + '/' + frameName;
+        window.location.replace(url);
+    }
+</script>
