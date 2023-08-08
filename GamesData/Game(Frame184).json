@@ -1,0 +1,46 @@
+{
+  "CountOfRow": 8,
+  "Words": [
+    {
+      "Word": "right",
+      "Color": "#8B008B",
+      "Id": 1
+    },
+    {
+      "Word": "fight",
+      "Color": "#8B008B",
+      "Id": 1
+    },
+    {
+      "Word": "clear",
+      "Color": "#1E8449",
+      "Id": 2
+    },
+    {
+      "Word": "fear",
+      "Color": "#1E8449",
+      "Id": 2
+    },
+    {
+      "Word": "tear",
+      "Color": "#1E8449",
+      "Id": 2
+    },
+    {
+      "Word": "ear",
+      "Color": "#1E8449",
+      "Id": 2
+    },
+    {
+      "Word": "sight",
+      "Color": "#8B008B",
+      "Id": 1
+    },
+    {
+      "Word": "light",
+      "Color": "#8B008B",
+      "Id": 1
+    }
+
+  ]
+}
