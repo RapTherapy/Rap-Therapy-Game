@@ -1,0 +1,55 @@
+﻿@page
+@model RapGame.Pages.Frame69TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowSoundButton = false;
+}
+
+<div class="container-fluid">
+    <div class="row text-center display-1">
+        <b>
+            Rap along to the song!​
+        </b>
+    </div>
+
+    <div class="row text-center pb-5">
+        <div class=" offset-4 col-4">
+            <button id="startBtnGame4" class="btn" onclick="playAudioForGame4(@($"'{Model.GameData.PathToSoundFile}'"))"><img class="img w-15" src="~/img/gameSound.png"></button>
+        </div>     
+    </div>
+
+    <div  class="row mt-5 z-90scaling150">
+        <div id="couplets" class="offset-1 col-8">
+    @for (int i = 0; i < Model.GameData.Couplet.Count; i++)
+    {
+        <div id="@($"{Model.GameData.Couplet[i].CoupletNumber}:{Model.GameData.Couplet[i].CoupletDuration}")" class="display-1 @(i > 0 ? "d-none" : "")">
+            @foreach (var item in Model.GameData.Couplet[i].Line)
+            {
+                                <div><b>@item.Text</b> <b class="text-success">@Model.GameData.Word.FirstOrDefault(x => x.WordId == item.LineId.ToString()).WordValue</b>
+                         
+                                @if (item.LineId == 24)
+                            {
+                                                     <b>”</b>
+                            }                      
+                
+                    </div>
+            }
+        </div>
+    }
+    </div>
+    
+</div>
+
+<div class="position-absolute bottom-0 end-0 me-2 mb-2">
+    <img class="img w-30" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])"/>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <button style="font-size:50px" id="nextBtn" class="btn btn-lg btn-dark mt-1 d-none" type="submit" onclick="goNext()">
+        Next
+    </button>
+</div>
+
+<script src="~/js/game4.js"></script>

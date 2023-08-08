@@ -1,0 +1,38 @@
+﻿@page
+@model RapGame.Pages.Frame73Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowMicsCounter = true;
+}
+<style>
+    .detailofimage {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+}
+</style>
+
+<div class="container-fluid">
+    <div class="row text-center display-5 animate__animated animate__fadeInUp animate__slower animate__delay-1s">
+        <b>
+            Well done!<br><br>
+            You have obtained 5 Mystic Mics from <br>
+            Rapping Rabbit
+        </b>
+    </div>
+    <div id="main" class="row text-center pt-2 ">
+        <div class="col z-110">
+            <img  src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[1])" class="img w-15  animate__animated  animate__flip animate__slower additionalpage" />
+            <img src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[1])" class="img w-15  animate__animated  animate__flip animate__slower additionalpage" />
+            <img id="first" class="detailofimage visible img w-30 animate__animated  animate__flip animate__slower " src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[2])" />
+            <img id="second" style="display:none" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[3])" class="img w-30"/>
+            <img src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[1])" class="img w-15  animate__animated  animate__flip animate__slower additionalpage"/>
+            <img src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[1])" class="img w-15 animate__animated  animate__flip animate__slower additionalpage" />
+        </div>
+    </div>
+</div>
+<script src="~/js/frame73.js">
+</script>

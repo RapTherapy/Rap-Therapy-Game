@@ -1,0 +1,26 @@
+﻿@page
+@model RapGame.Pages.Frame24Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+     ViewBag.ShowMicsCounter = true;
+}
+<div class="container text-center animate__animated animate__fadeInUp animate__slower" style="margin-top:5rem">
+    <div class="row">
+        <div class="col-xl-12 col-md-8 offset-md-1 offset-xl-0 display-3">
+            <b>
+                I’m going to pass the mic onto my
+                <br>
+                good friend Rhyming Rebecca to
+                <br>
+                explain what rhyme schemes are!
+            </b>
+        </div>
+    </div>
+    <div class="row pt-4">
+        <div class=" col-xl-4 offset-xl-4 col-md-8 offset-md-1 ">
+            <img class="img w-30"
+            src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>

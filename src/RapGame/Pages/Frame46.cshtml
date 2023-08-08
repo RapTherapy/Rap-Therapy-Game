@@ -1,0 +1,87 @@
+﻿@page
+@model RapGame.Pages.Frame46Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    }
+
+<div class="container-fluid">
+    <div class="row text-center animate__animated animate__fadeInUp animate__slow">
+        <div class="display-3 z-120"><b class="text-success">A</b><b style="color:#8B008B" >B</b><b class="text-success">A</b><b style="color:#8B008B" >B</b></div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-6 col-md-6 animate__animated animate__fadeInUp animate__slow animate__delay-2s z-120">
+            <div class="row display-6 text-center z-100">
+                 <div class="pt-3">
+                    <b>I was sitting on a </b>
+
+                    <img id="firstrow" src="/img/border_stool.png" style="display: none" class="circle1ABAB" />
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            stool
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>I was waiting for my</b>
+                    <img id="secondrow" src="/img/border_friendpoor.png" style="display: none" class="circle2ABAB"  />
+                    <b>
+                        <b class=" border border-0 border-success rounded-pill rounded-3 p-1" style="color:#8B008B">
+                            friend
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>My friend he’s so</b>
+
+                    <img id="thirdrow" src="/img/border_cool.png" style="display: none" class="circle3ABAB" />
+                    <b>
+                        <b class="text-success  border border-0 border-success rounded-pill rounded-3 p-1" >
+                            cool
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>Our friendship will never  </b>
+
+                    <img id="fourthrow" src="/img/border_end.png" style="display: none" class="circle4ABAB" />
+                    <b>
+                        <b class="border border-0 border-success rounded-pill rounded-3 p-1" style="color:#8B008B">
+                           end
+                        </b>
+                    </b>
+                </div>
+               @* <b class="pt-3">I was sitting on a <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px">stall</b></b> <br />
+                <b class="pt-3">I was waiting for my <b class=" border border-0  rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px;color:#8B008B" >friend</b></b> <br />
+                <b class="pt-3">My friend he’s so <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px">cool</b></b> <br />
+                <b class="pt-3">Our friendship will never <b class=" border border-0  rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px;color:#8B008B">end</b></b>*@
+            </div>
+           
+            <div class="row">
+                <div class="col text-center">
+                    <img class="img w-30" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])">
+                </div>
+            </div>
+        </div>
+
+        <div class="ofset-xl-1 col-xl-5 col-md-6 align-self-center ">
+            <div class="display-3 text-start animate__animated animate__fadeInUp animate__slower animate__delay-3s">
+                <b class="pt-3">The first line and the third</b> <br />
+                <b class="pt-3">line rhyme with each</b> <br />
+                <b class="pt-3">other and the second line</b> <br />
+                <b class="pt-3">and the fourth line rhyme</b> <br />
+                <b class="pt-3">with each other, so this</b> <br />
+                <b>would be called an <label class="text-success">A</label><label style="color:#8B008B" >B</label><label class="text-success">A</label><label style="color:#8B008B" >B</label></b> <br />
+                <b>rhyme scheme.</b>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/frame28.js"></script>
+
+

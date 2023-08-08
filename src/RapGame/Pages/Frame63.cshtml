@@ -1,0 +1,26 @@
+﻿@page
+@model RapGame.Pages.Frame63Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+}
+
+<div class="container-fluid ">
+    <div class="row align-items-center pt-5">
+        <div class="col-8 pt-5">
+            <div class="display-2 text-center animate__animated animate__fadeIn animate__slower">
+                <b>You will now have to insert some <br /> words to make a <a class="z-102" href='Frame64'>16 bar</a> rap.</b>
+            </div>
+
+            <div class="display-2 text-center pt-5 animate__animated animate__fadeIn animate__slower">
+                <b>The rap needs to make sense and <br /> you must follow the <label class="text-success">AAAA</label> rhyme <br /> scheme!</b>
+            </div>
+        </div>
+
+        <div class="col-4 pt-5 animate__animated animate__fadeInUp animate__slower">
+            <img src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])"/>
+        </div>
+    </div>
+</div>

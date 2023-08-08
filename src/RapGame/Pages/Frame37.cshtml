@@ -1,0 +1,89 @@
+﻿@page
+@model RapGame.Pages.Frame37Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container-fluid">
+    <div class="row text-center animate__animated animate__fadeInUp animate__slow">
+        <div class="display-3 z-120"><b class="text-success">AA</b><b style="color:#8B008B">BB</b></div>
+    </div>
+
+    <div class="row">
+        <div class="ps-5 col-xl-7 col-md-6 animate__animated animate__fadeInUp animate__slow animate__delay-2s z-120">
+            <div class="row display-6 text-center mt-5">
+                <div class="pt-3">
+                    <b>Every single day I see my best </b>
+
+                    <img id="firstrow" src="/img/border_friend.png" class="circle1AABB" style="display: none"/>
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            friend
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>If we have a disagreement we will not</b>
+                    <img id="secondrow" src="/img/border_pretend.png" class="circle2AABB" style="display: none"/>
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            pretend
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>We will talk it out if there’s an</b>
+
+                    <img id="thirdrow" src="/img/border_issue.png"  class="circle3AABB" style="display: none"/>
+                    <b>
+                        <b class="border border-0 border-success rounded-pill rounded-3 p-1" style="color:#8B008B">
+                            issue
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>And if he starts to cry, I’ll get him a </b>
+
+                    <img id="fourthrow" src="/img/border_tissua.png" class="circle4AABB" style="display: none" />
+                    <b>
+                        <b class="border border-0 border-success rounded-pill rounded-3 p-1" style="color:#8B008B">
+                            tissue
+                        </b>
+                    </b>
+                </div>
+            </div>
+            @*<b class="pt-3">Every single day I see my best <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px">friend</b></b> <br />
+            <b class="pt-3">If we have a disagreement we will not <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px">pretend</b></b> <br />
+            <b class="pt-3">We will talk it out if there’s an <b class=" border border-0  rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px;color:#8B008B">issue</b></b> <br />
+            <b class="pt-3">And if he starts to cry, I’ll get him a <b class=" border border-0  rounded-pill rounded-3 p-1" style="box-shadow: 0px 0px 3px 3px;color:#8B008B">tissue</b></b>*@
+
+
+            <div class="row">
+                <div class="col text-center">
+                    <img class="img w-30" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])">
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-xl-4 align-self-center pt-2">
+            <div class="display-4 text-start animate__animated animate__fadeInUp animate__slower animate__delay-5s">
+                <b class="pt-3">The first two lines rhyme</b> <br />
+                <b class="pt-3">with each other and the</b> <br />
+                <b class="pt-3">last two lines rhyme with</b> <br />
+                <b class="pt-3">each other so this would</b> <br />
+                <b>be called <label class="text-success">AA</label><label style="color:#8B008B">BB </label> rhyme</b> <br />
+                <b>scheme.</b>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/frame28.js"></script>
+
+
+
+

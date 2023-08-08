@@ -1,0 +1,24 @@
+﻿@page
+@model RapGame.Pages.Frame34TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{ 
+    ViewData["Title"] = Model.MediaData.Title;
+}
+
+<div class="container">
+    <div class="row justify-content-center pt-3 animate__animated animate__fadeInUp animate__slower animate__delay-1s z-90">
+        <div class="col display-3 text-center">
+            <b>@Html.Raw(Model.TextData.Text)</b> 
+            <br>
+            <b class="pt-3">You have just obtained a Mystic Mic!</b>
+        </div>
+    </div>
+
+    <div id = "lastAnimation" class="row justify-content-center pt-5  animate__animated  animate__flip animate__slower">
+        <div class="col text-center">
+            <img class="img w-30" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])"/>
+        </div>
+    </div>
+</div>
+    
+  

@@ -1,0 +1,32 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame6Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+}
+
+<div class="container animate__animated animate__fadeInUp">
+    <div class="row justify-content-center">
+        <div class="col" style="text-align:center">
+            <div class="display-1"><b>Mystic Mics can be collected after completing different challenges.</b></div>
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="col-2 align-self-end animate__animated animate__flip animate__delay-2s animate__repeat-3">
+            <img id="leftUpperMic" class="img w-15 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+        <div class="col-2 animate__animated animate__flip animate__delay-2s animate__repeat-3">
+            <img id="leftBottomMic" class="img w-15 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[1])" />
+        </div>
+        <div class="col-4 pe-4" style="padding-left:3rem">
+            <img class="img preserve-width w-30 " src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[2])" />
+        </div>
+        <div class="col-2 ps-5 animate__animated animate__flip animate__delay-2s animate__repeat-3">
+            <img id="rightUpperMic" class="img w-15 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[3])" />
+        </div>
+        <div class="col-2 align-self-end animate__animated animate__flip animate__delay-2s animate__repeat-3">
+            <img id="rightBottomMic" class="img w-15 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[4])" />
+        </div>
+    </div>
+</div>

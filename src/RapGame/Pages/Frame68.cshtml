@@ -1,0 +1,27 @@
+﻿@page
+@model RapGame.Pages.Frame68Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container">
+    <div class="row text-center display-6 animate__animated animate__fadeInUp animate__slow">
+        <b>Well done!<br><br>
+        You have unlocked one of my good friends Rapping <br>
+        Rabbit! <br>
+        Rapping Rabbit only appears a few times on our journey<br>
+        and he gives you 5 Mystic Mics.​</b>
+    </div>
+     <div class="row text-center pt-2 animate__animated animate__fadeInUp animate__slow">
+        <div class="col">
+        <img class="img w-30" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])" />
+        </div>
+      </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 me-5 mb-5 animate__animated animate__fadeInUp animate__slow">
+    <img class="img w-30" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[1])" />
+</div>
+
+

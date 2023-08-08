@@ -1,0 +1,42 @@
+﻿@page
+@model RapGame.Pages.Frame76Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+}
+
+<div class="container-fluid " style="margin-top:5rem">
+    <div class="row pt-5">
+        <div class="col-3 animate__animated animate__fadeInUp animate__slow">
+            <img class="preserve-width z-90"  src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+        <div class="col-6">
+            <div class="row">
+        <div class="offset-5 col-7  animate__animated animate__fadeInUp animate__delay-2s animate__slow">
+            <div class="display-3 z-130 ms-5">
+                <b>
+                   
+                     Wow! <br>
+                    Thanks for that <br>
+                    Rhyming Rebecca.
+                </b>
+            </div>
+        </div>
+        </div>
+          <div class="row" style="margin-top: 15rem">
+        <div class="offset-1 col-11 animate__animated animate__fadeInUp animate__delay-3s animate__slow">
+            <div class="display-3 z-130">
+                <b>
+                    No worries Proph, <br>
+                    I’m going to pass the <br>
+                    Mic back to you!
+                </b>
+            </div>
+        </div>
+ </div>
+ </div>
+        <div class="col-3 animate__animated animate__fadeInUp animate__slow">
+            <img class="preserve-width z-90" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[1])" />
+        </div>
+    </div>
+</div>

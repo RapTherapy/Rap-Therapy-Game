@@ -1,0 +1,27 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame5Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+}
+<div class="container">
+    <div id="lastAnimation" class="row animate__animated animate__slow animate__fadeInUp">
+        <div class="col" style="text-align:center">
+            <div class="display-2">
+                <b>Throughout this journey,<br> your goal is to collect <br></b>
+            </div>
+
+            <div class="display-2">
+                <img class="img-fluid m-3 w-30 z-102"
+                     src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])" />
+                     <br>
+                <b id="lastAnimation">All 50 Mystic Mics!</b>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 animate__animated animate__slow animate__fadeInUp">
+    <img class="img-fluid w-20" style="margin:10rem;" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[1])" />
+</div>
+

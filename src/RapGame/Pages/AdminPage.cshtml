@@ -1,0 +1,106 @@
+﻿@page
+@model RapGame.Pages.AdminPageModel
+@{
+    ViewData["Title"] = "Admin page";
+    ViewBag.ShowLogoutButtom = false;
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowSoundButton = false;
+}
+<div class="container pt-5">
+    <div class="row justify-content-center">
+        <div class="offset-3 col pt-2">
+            <h5>Base path: @Model.PathToAssets</h5>
+        </div>
+
+        <div class="col">
+            <div class="row">
+                <input name="file" type="file" webkitdirectory multiple>
+                <span id='val'></span>
+            </div>
+        </div>
+
+        <div class="col-2 pt-2">
+            <div class="row">
+                <button type="submit" class="btn btn-primary save-button" onclick="saveBasePath()">Set base path</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-5">
+        <div class="offset-3 col">
+            <form method="post">
+                <button id="sumbmitBtn" class="btn btn-outline-dark" type="submit" asp-page-handler="BackTheGame">Back to the game</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-5">
+        <div class="offset-3 col">
+            <button type="button" class="btn btn-lg btn-outline-success" onclick="getCreateForm('')">Add new student</button>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-3 z-120">
+        <div class="offset-1 col-7">
+            <table id="example" class="table table-warning table-hover table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th class="text-center"><b>Student name</b></th>
+                        <th class="text-center"></th>
+                        <th class="text-center"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Students)
+                    {
+                        <tr>
+                            <th class="text-center">@item.Name</th>
+                            <th><a href='StudentReport?studentId=@item.Id'>Feelings report</a></th>
+                            <th class="text-center"><button class="btn btn-success" onclick="getCreateForm('@item.Id')">Edit user</button></th>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="createStudentForm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-body" style="background-color:#F0E2B6">
+                <p><b>Login </b> must contain only alphabetic characters and numbers and start from alpabetic character</p>
+                <p>
+                    <b>Password </b> must contains at least three characters and also contain at least:
+                    <ul>
+                        <li>one uppercase alphabetic character</li>
+                        <li>one lowercase alphabetic character</li>
+                        <li>one number character</li>
+                        <li>one special character (@("@$!%*?&"))</li>
+                    </ul>
+                </p>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Login</span>
+                    <input id="loginInput" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" oninput="getErrorMessage('login')" onkeypress="enterKeyPress(event)">
+                </div>
+                <h5 id="loginMessage" class="d-none"></h5>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="inputGroup-sizing-default">Password</span>
+                    <input id="passwordInput" type="password" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" oninput="getErrorMessage('password')" onkeypress="enterKeyPress(event)">
+                </div>
+                <h5 id="passwordMessage" class="d-none"></h5>
+
+            </div>
+
+            <div class="modal-footer" style="background-color:#F5DEB3">
+                <button id="DeleteUser" type="button" class="btn btn-danger me-5 d-none" data-bs-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-secondary ms-5" data-bs-dismiss="modal">Close</button>
+                <button id="SaveUser" type="submit" class="btn btn-primary save-button" disabled="disabled">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+﻿@page
+@model RapGame.Pages.Frame23Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = false;
+    ViewBag.additional = true;
+
+}
+
+<div class="container text-center animate__animated animate__fadeInUp " style="margin-top:6rem">
+    <div class="row">
+        <div class="col-xl-12 col-md-8 offset-md-1 offset-xl-0 display-3">
+            <b id="start">
+                To see how many Mystic Mics you
+                <br>
+                have obtained,
+                <br>
+                look at the top of the screen!
+            </b>
+        </div>
+    </div>
+    <div class="row pt-4">
+        <div class=" col-xl-4 offset-xl-4 col-md-8 offset-md-1 ">
+            <img class="img w-30"
+                 src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+
+    </div>
+</div>
+<div id="lastAnimation2" class="position-absolute top-0 end-0 pt-2 pe-2 animate__animated animate__fadeInUp animate__delay-2s animate__slower maxwith_frame23" >
+    <div class="col align-self-center  border border-2 border-success bordergreen arrow_frame23">
+        <div id="end2" class="row">
+            <div class="col-6">
+                <img class="img w-10 m-2" src="/img/Mystics.png" />
+            </div>
+
+            <div class="col-6 pe-3">
+                <h3 class="pt-5">You have</h3>
+                <h3>@Model.CountOfMysticMics/50</h3>
+                <h3>Mystic Mics</h3>
+            </div>
+        </div>
+    </div> 
+    <div  class= "mt-1 setarrow_frame23">
+        <img  src="/img/image.png" />
+    </div>
+</div>
+
+
+<script src="~/js/leader-line.min.js"></script>

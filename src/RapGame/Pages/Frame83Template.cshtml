@@ -1,0 +1,72 @@
+﻿@page
+@model RapGame.Pages.Frame83TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false; 
+}
+
+<div class="container-fluid pt-5">
+    <div class="row pt-5">
+        <div class="col-7 offset-1 z-84scaling100">
+            <div class="row mt-5 pt-5">
+                <div class="display-2 text-center mb-5"><b>Which rhyme scheme is being <br>
+                    used?</b></div>
+                @foreach (var item in Model.GameData.Sentences)
+                {
+                    <div class="display-4 text-center"><b>@item.SentenceText</b> <b style="color: @item.LastWordTextColor">@item.LastWord</b></div>
+                }
+            </div>
+
+            <div class="row pt-4 mt-5 text-center">
+                <div class="col-4">
+                    <button type="button" id="AAAA" class="btn btn-outline-dark btn-lg borderblack z-110" onclick="isAnswerCorrect(this.id)"><b style="color:rgb(0, 176, 80); font-size:50px">AAAA</b></button>
+                </div>
+
+                <div class="col-4">
+                    <button type="button" id="AABB" class="btn btn-outline-dark btn-lg borderblack z-110" onclick="isAnswerCorrect(this.id)"><b style="color:rgb(0, 176, 80); font-size:50px">AA</b><b style="color:#8B008B; font-size:50px">BB</b></button>
+                </div>
+
+                <div class="col-4">
+                    <button type="button" id="ABAB" class="btn btn-outline-dark btn-lg borderblack z-110" onclick="isAnswerCorrect(this.id)"><b style="color:rgb(0, 176, 80); font-size:50px">A</b><b style="color:#8B008B; font-size:50px">B</b><b style="color:rgb(0, 176, 80); font-size:50px">A</b><b style="color:#8B008B; font-size:50px">B</b></button>
+                </div>
+            </div>
+        </div>
+
+        <div id="rhyme" class="col-3 pt-5 align-items-center">
+            <img id="@Model.GameData.RhymeScheme" class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.GameData.PathToImages)"/>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame83Template">
+        <button style="font-size:50px" id="nextBtn" class="btn btn-lg btn-dark mt-1 d-none" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+
+<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Are you sure? <br>Try again.</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalWin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>You are win.</i></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/game5.js"></script>
+

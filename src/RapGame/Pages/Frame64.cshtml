@@ -1,0 +1,31 @@
+﻿@page
+@model RapGame.Pages.Frame64Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container-fluid">
+    <div class="row animate__animated animate__zoomIn animate__slower">
+        <div class="text-center display-3"><label style="color: #0000FF"><b>16 bar</b></label></div>
+    </div>
+    <br>
+    <div class="row ps-5  align-items-center ">
+        <div class="col-8">
+            <div class="display-3 text-center animate__animated animate__slower  animate__fadeInUp animate__delay-2s mb-5"><b>A <label style="color: #0000FF">bar</label> is a single line in a rap.</b></div>
+
+            <div class="display-4 animate__animated animate__slower  animate__fadeInUp animate__delay-3s  pt-5">
+                <div> <b><b>For example:</b></b> </div>
+                <div class="pt-3"> <b>I woke up this morning feeling really <label class="text-success">cool</label> (one bar)</b> </div>
+                <div class="pt-3"> <b>Every single day I have to go to <label class="text-success">school</label> (this line with the above <br> line makes two bars)</b> </div>  
+                <div class="pt-3"> <b>I have loads of friends because I’m not <label class="text-success">cruel</label> (this line with the <br> previous two bars makes three bars)</b> </div>
+                <div class="pt-3"> <b>And in the summer holidays we jump in a <label class="text-success">pool</label> (this line with the <br> previous three bars makes four bars)</b> </div>                  
+            </div>
+        </div>
+
+        <div class="col-4 animate__animated animate__fadeInUp animate__slower animate__delay-2s">
+            <img src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+﻿@page
+@model RapGame.Pages.Frame154Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+     ViewBag.ShowMicsCounter = true;
+     ViewBag.ShowButtom = false;
+}
+<div class="container-fluid mt-5">
+    <div class="row mt-5">
+        <div id="click" class="offset-1 col-3 align-self-center text-center animate__animated animate__fadeInUp animate__slower animate__delay-2s">
+           <div class="borderred display-4">
+                <b>
+                    Click on the word 
+                    <br>
+                    that shows us that
+                    <br>
+                    this is a simile.​
+                </b>
+          </div>
+        </div>
+             <div  class="col-4 text-center">
+                 <img class=" m-3 w-30" src="@mediaHelper.GetMediaPath(Model.Data.PathToThePhotoFile)"/>
+             </div>
+        <div id="start"  class="col-4 align-self-center d-none text-center">
+            <div class=" borderred display-6 me-5 ps-4">
+            <b>
+                @for(int i=0; i<@Model.Data.Сonclusion.Length; i++)
+                {   
+                    if(i==@Model.Data.Сonclusion.Length-1)
+                    {
+                        @Model.Data.Сonclusion[i]
+                    }
+                    else
+                    {
+                        @Model.Data.Сonclusion[i] 
+                    <br>  
+                    } 
+                }
+            </b>
+             </div>
+
+        </div>
+    </div>
+        </div>
+    <div id="finish" class="d-flex flex-row justify-content-center text-center mt-5 animate__animated animate__fadeInUp animate__slower">   
+            @for(int i=0; i<@Model.Words.Length; i++)
+            {
+               <div  class=" display-3 me-2">
+                   <b id="string+@i" class="answer">@Model.Words[i]
+                   </b>
+                   </div>   
+            }
+        </div>
+<div class="position-absolute bottom-0 end-0 pb-5 pe-2">
+     <img class="img w-20" src = "@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+</div>
+
+<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Are you sure? <br>Try again.</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame17">
+        <button style="font-size:50px" id="sumbmitBtn" class="btn btn-lg btn-dark mt-1 d-none" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+     <script src="~/js/game7.js"></script>
+     <script src="~/js/leader-line.min.js"></script>

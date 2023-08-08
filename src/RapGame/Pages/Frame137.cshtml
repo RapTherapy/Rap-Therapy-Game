@@ -1,0 +1,68 @@
+﻿@page
+@model RapGame.Pages.Frame137Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    var currentAudio = mediaHelper.GetMediaPath(Model.CurrentPathAudio);
+    ViewBag.ShowMicsCounter = true;
+}
+<div class="container-fluid text-center h-100 ">
+    <div class="row display-5">
+        <div class="col-xl-12 col-md-6">
+            <b>
+                The rap will play and you will listen and read along as the rap
+                <br>
+                plays. 
+                <br>
+                The game will then begin!
+            </b>
+        </div>
+    </div>
+
+<div class="row display-6 mt-4 z-104scaling150">
+    <div class="col-xl-4 align-self-end mb-5">          
+             <button id="startBtnFrame137" class="btn" onclick="playAudioForFrame137('@currentAudio')">
+                 <img class="pt-5 btn" style="width:300px; height:300px" src="~/img/gameSound.png"></button>                 
+    </div>
+    <div class="col-xl-5 text-start" style="font-size:2rem">
+       <b> It’s my fate, I know I’m great​
+        <br>
+        I sleep early I don’t sleep late 
+        <br>
+        So I’m always alert 
+        <br>
+        When I play football I always have a messy shirt 
+       <br>
+       <br>
+       I can be what I want when I’m older 
+       <br>
+       Holding my controller I play games with composure
+       <br>
+       Sports person, e-gamer or a musician
+        <br>
+        Whatever I do I have to have a clear vision 
+        <br>
+         <br>
+        I always have to keep the right crowd ​
+        <br>
+        When I make it I’ll make my family proud ​
+        <br>
+        Because I got vision and I make the right decision 
+        <br>
+        I’m going to be great that’s what I envision
+        <br>
+       <br>
+       I make sure I’m always behaving​
+       <br>
+       If I am behaving my life will be amazing 
+       <br>
+       Hard work focus I’ll get what I want 
+       <br>
+       Hard work focus I’ll get what I want 
+       </b>
+    </div>
+   <div class="col-xl-3"> 
+     <img class="img-fluid m-3 w-30 " src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])" />
+    </div>
+ </div>
+</div>
+<script src="~/js/frame137.js"></script>

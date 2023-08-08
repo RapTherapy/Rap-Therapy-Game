@@ -1,0 +1,43 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame9Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+}
+
+<div class="container-fluide">
+    <div class="row">
+        <div class="col-sm-4 ps-5 pt-3 animate__animated animate__slow animate__fadeInUp z-110">
+            <img class="img preserve-width w-40" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+
+        <div class="col-sm-8 ml-2 pt-5 z-120">
+            <div class="row">
+                <div class="offset-1 col animate__animated animate__slow animate__fadeInUp ">
+                    <div class="display-5 "><b>Ha ha ha, I’m The <br /> Mic Menace and I <br /> am here to steal <br /> your microphones!</b></div> <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="offset-3 col animate__animated animate__slow animate__fadeInUp  animate__delay-3s ps-5">
+                    <div class="display-1 ps-5"><b><b>Wait...</b></b></div> <br />
+                </div>
+            </div>
+
+            <div class="row">
+                <div id="lastAnimation" class="offset-5 col animate__animated animate__slow animate__fadeInUp animate__delay-5s">
+                    <div class="display-5">
+                        <b>
+                            What’s this…you don’t have <br />
+                            any microphones to steal yet? <br />
+                            <br />
+                            Pathetic! <br />
+                            <br />
+                            I guess I will be seeing you later!
+                        </b>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

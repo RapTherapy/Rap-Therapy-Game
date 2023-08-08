@@ -1,0 +1,29 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame136Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+}
+
+
+<div class="container-fluid text-center h-100 mt-5">
+    <div class="row">
+        <br>
+    </div>
+    <div class="row display-5">
+        <div class="col-xl-8     col-md-6 text-center">
+             @Html.Raw(Model.HeaderForFrame)
+        </div>
+    </div>
+    <div class="row h-100 align-items-center @(Model.FrameNumber ==151?"": "pt-5 mt-5") @(Model.FrameNumber ==149|| Model.FrameNumber ==152 ?"z-90": "")">
+        <div class=" col-xl-8 align-items-center @(Model.FrameNumber ==151?"z-110": "")">
+            @Html.Raw(Model.TextForFrame)
+        </div>
+
+        <div class=" col-xl-4 animate__animated animate__fadeInUp animate__slower">
+            <img  src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+            @*<img src="~/img/PROPH.png"/>*@
+        </div>
+    </div>
+</div>

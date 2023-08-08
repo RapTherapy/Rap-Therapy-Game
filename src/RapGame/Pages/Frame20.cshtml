@@ -1,0 +1,29 @@
+﻿@page
+@model RapGame.Pages.Frame20Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowButtom = false;
+}
+
+<div class="container text-center">
+    <div class="row animate__animated animate__slow animate__fadeInUp">
+        <div class="display-4">
+            <b class="pb-3">Well done!</b> <br />
+            <b>You have just <a id="end" href='Frame4Template?FrameNumber=21' style="font-size:4rem">obtained</a> a Mystic Mic!</b>
+        </div>
+    </div>
+
+    <div id="changeAnimation" class="row justify-content-center pt-5 animate__animated  animate__flip animate__slower ">
+        <div class="col">
+            <img class="img w-30 mt-5" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>
+
+<div id="lastAnimation" class="top-100 start-0 display-5 ps-5 animate__animated animate__fadeIn animate__delay-2s" style="visibility: hidden">
+    <b id="start">Click the following <br> word to move on.</b>
+</div>
+
+<script src="~/js/leader-line.min.js"></script>
+<script src="~/js/arrow20frame.js"></script>

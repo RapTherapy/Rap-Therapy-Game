@@ -1,0 +1,43 @@
+﻿@page
+@model RapGame.Pages.Frame82TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowSoundButton = false;
+    var soundPath = mediaHelper.GetMediaPath(Model.GameData.PathToAudioFileFrame82);
+}
+
+<div class="container pt-5">
+    <div id="duration" class="row text-center">
+        <div id="@Model.GameData.SentenceDuration" class="col display-2"><b>@Model.GameData.EmotionForRap</b></div>
+    </div>
+
+    <div class="row pt-5 text-center">
+        @foreach (var item in Model.GameData.Sentences)
+        {
+            <div class="display-4"><b>@item.SentenceText</b> <b style="color: @item.LastWordTextColor">@item.LastWord</b></div>
+        }
+    </div>
+
+    <div class="row pt-3 align-items-center">
+        <div class="offset-4 col-3 ps-5">
+            <img class="img w-26 preserve-width" src="@mediaHelper.GetMediaPath(Model.GameData.PathToImages)" />
+        </div>
+
+        <div class="offset-3 col-2 text-center">
+            <button id="startBtn" class="btn" onclick="playAudioForGame5('@soundPath')"><img class="img-fluid" src="~/img/gameSound.png" /></button>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame82Template">
+        <button style="font-size:50px" id="nextBtn" class="btn btn-lg btn-dark mt-1 d-none" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+
+<script src="~/js/game5.js"></script>

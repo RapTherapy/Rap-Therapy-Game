@@ -1,0 +1,70 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame17Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowButtom = false;
+}
+<link rel="stylesheet" href="~/css/game1.css">
+
+<div class="container-fluid" style="-webkit-user-select: none;">
+    <div class="row">
+        <div class="col-xl-12 col-md-8 text-center">
+            <div @(Model.FrameNumber == 19 ? "id=startText" : "") class="display-4"><b>@Html.Raw(Model.GameData.TextForFrame)</b></div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-5 text-center">
+        <div class="col-2 display-4 pt-2 border border-3 border-dark borderblack" style="font-size:100px;"><b><b>@Model.GameData.LeftSideWord</b></b></div>
+
+        <div id="cTime" class="col-3 border-bottom border-3 border-dark box-shadow-bottom text-center align-self-center"><button  id="@(Model.PageVisits == 1 ? 30 : 45)" style="border: none;background: none; height:100px; margin-bottom:3rem;" onclick="start(this)"><div class="@(Model.GameData.IsGameWithTimer == true ? "" : "d-none")" id="app"></div></button></div>
+
+        <div class="col-2 text-center pt-2 display-4 border border-3 border-dark borderblack" style="font-size:100px;"><b><b>@Model.GameData.RightSideWord</b></b></div>
+    </div>
+
+    <div class="row border-3 border-bottom border-dark box-shadow-bottom" style="min-height:480px;">
+        <div id="L" class="col-6 text-center border-3 border-end border-dark box-shadow-right" @(Model.GameData.IsGameWithTimer == true ? "" : "ondrop=drop(event)") ondragover="allowDrop(event)">
+        </div>
+
+        <div id="R" class="col-6 text-center" @(Model.GameData.IsGameWithTimer == true ? "" : "ondrop=drop(event)") ondragover="allowDrop(event)">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xl-12 col-md-8 z-90">
+            <table id="words" style="width:100%; table-layout:fixed; margin-left:@(Model.FrameNumber == 17 ? 6 : 3)rem;">
+
+                @for (int i = 0; i < 2; i++)
+                {
+                    <tr>
+                        @for (int j = i == 0 ? 0 : 5; j < (i == 0 ? 5 : Model.GameData.Words.Count); j++)
+                        {
+                            <td id="@j"><div id="@Model.GameData.Words[j].WordId:@j" class="text-success" style="cursor:pointer; font-size:100px; font-weight: bold;" @(Model.GameData.IsGameWithTimer == true ? "" : "draggable=true") ondragstart=drag(event) data-parent="empty">@Model.GameData.Words[j].WordValue</div></td>
+                    }
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame17">
+        <button style="font-size:50px" id="sumbmitBtn" class="btn btn-lg btn-dark mt-1 d-none" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Does the last part of the word sound the same as the word above?</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/leader-line.min.js"></script>
+<script src="~/js/game1.js"></script>

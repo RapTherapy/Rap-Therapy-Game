@@ -1,0 +1,157 @@
+﻿@page
+@model RapGame.Pages.Frame80TemplateModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+}
+
+<div class="container-fluid pt-5 z-90scaling150" style="-webkit-user-select: none;">
+    <div id="header" class="row">
+        <div class="col display-2 text-center"><b>@Model.GameData.EmotionForRap</b></div>
+    </div>
+
+    <div class="row pt-5 align-items-center">
+        <div class="@(Model.GameData.EnlargedText?"col-6 offset-1": "col-7 offset-1") z-84scaling100">
+            <div  id="end"  class="row">
+                @if (Model.GameData.EmotionForRap != "Angry")
+                {
+                    @for (int i = 0; i < Model.GameData.Sentences.Count; i++)
+                    {
+                        @if (Model.GameData.AdditionalContent.RowNumberWithRefOnAdditionalContent == i + 1)
+                        {
+                                                            <a  class="z-104scaling150" href="AdditionalContent/AdditionalContentPage?FrameNumber=@Model.Setting.FrameNumber&EmotionForRap=@Model.Setting.EmotionForRap">
+                                                        <div  class="pt-3">
+                                                                                                            <div id="@Model.GameData.Sentences[i].LastWord" class="display-4" style="float: left;"><b>@Model.GameData.Sentences[i].SentenceText</b>
+
+                                    </div>
+                                                                            <div class="border-bottom border-dark ms-2 display-4" style="float: left; width:14rem; height: 4rem;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                                </div>
+                                            </a>
+                        }
+                        else
+                        {  
+                                            <div class="pt-3">
+                                                                        <div id="@Model.GameData.Sentences[i].LastWord" class="display-4" style="float: left;"><b>@Model.GameData.Sentences[i].SentenceText</b></div>
+                                                                                <div class="border-bottom border-dark ms-2 display-4" style="float: left; width:14rem; height: 4rem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                            </div>
+                        }
+                    }
+                }
+                else 
+                {
+
+                    @for (int i = 0; i < Model.GameData.Sentences.Count; i++)
+                    {
+                        @if (Model.GameData.AdditionalContent.RowNumberWithRefOnAdditionalContent == i + 1)
+                        {
+                                                                        <a  class="z-104scaling150" href="AdditionalContent/AdditionalContentPage?FrameNumber=@Model.Setting.FrameNumber&EmotionForRap=@Model.Setting.EmotionForRap">
+                                                                    <div  class="pt-3">
+                                                                                                                        <div id="@Model.GameData.Sentences[i].LastWord" class="display-4" style="float: left;"><b>@Model.GameData.Sentences[i].SentenceText</b>
+
+                                                </div>
+                                                                                        <div class="border-bottom border-dark ms-2 display-3" style="float: left; width:14rem; height: 4rem;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                                            </div>
+                                                        </a>
+                        }
+                        else
+                        {  
+                                                        <div class="pt-3">
+                                                                                    <div id="@Model.GameData.Sentences[i].LastWord" class="display-3" style="float: left;"><b>@Model.GameData.Sentences[i].SentenceText</b></div>
+                                                                                            <div class="border-bottom border-dark ms-2 display-4" style="float: left; width:14rem; height: 4rem" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                                                        </div>
+                        }
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="col-3">
+            <img src="@mediaHelper.GetMediaPath(Model.GameData.PathToImages)" class="img preserve-width w-30">
+        </div>
+    </div>
+
+    <div class="row pt-5">
+        <div class="offset-2 col-8 z-90">
+            <div id="words" class="row">
+                @if (Model.GameData.EmotionForRap == "Sad")
+                {
+                            <div class="col-3">
+                                                <div id="@(3):@Model.GameData.Sentences[3].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[3].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[3].LastWord</div>
+                                        </div>
+                                            <div class="col-3">
+                                                <div id="@(1):@Model.GameData.Sentences[1].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[1].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[1].LastWord</div>
+                                        </div>
+                                            <div class="col-3">
+                                                <div id="@(2):@Model.GameData.Sentences[2].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[2].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[2].LastWord</div>
+                                        </div>
+                                            <div class="col-3">
+                                                <div id="@(0):@Model.GameData.Sentences[0].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[0].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[0].LastWord</div>
+                                        </div>
+                }
+                @if (Model.GameData.EmotionForRap == "Excited")
+                {
+                                <div class="col-3">
+                                                    <div id="@(0):@Model.GameData.Sentences[0].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[0].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[0].LastWord</div>
+                                            </div>
+                                                <div class="col-3">
+                                                    <div id="@(3):@Model.GameData.Sentences[3].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[3].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[3].LastWord</div>
+                                            </div>
+                                                <div class="col-3">
+                                                    <div id="@(2):@Model.GameData.Sentences[2].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[2].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[2].LastWord</div>
+                                            </div>
+                                                <div class="col-3">
+                                                    <div id="@(1):@Model.GameData.Sentences[1].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[1].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[1].LastWord</div>
+                                            </div>
+                }
+                @if (Model.GameData.EmotionForRap != "Excited" && Model.GameData.EmotionForRap != "Sad")
+                {
+                    @for (int i = 0; i < Model.GameData.Sentences.Count; i++)
+                    {
+                                        <div class="col-3">
+                                                <div id="@(i):@Model.GameData.Sentences[i].LastWord" class="text-center border border-dark borderblack display-6 m-1 p-2" style="color:@Model.GameData.Sentences[i].LastWordTextColor;font-size: 4rem;" draggable=true ondragstart=drag(event)>@Model.GameData.Sentences[i].LastWord</div>
+                                        </div>
+                    }
+                }               
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="navigationPanel" class="position-absolute bottom-0 end-0 pb-1 pe-1 d-none">
+    @if (Model.GameData.IsPageContainAdditionalContent)
+    {
+                        <div id="start" class="display-2 m-5 border-3 text-center borderbluegame5 ps-2 pe-2">
+                    <b>Click on the blue line!</b>
+                </div>
+    }
+    else
+    {
+                <button id="Frame81Template:@Model.Setting.FrameNumber:@Model.Setting.EmotionForRap" style="font-size:50px" class="btn btn-lg btn-dark mt-1" type="submit" onclick="GoTo(this.id)">
+                    Next
+                </button>
+    }
+</div>
+
+<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Are you sure? <br>Try again.</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalWin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>You are win.</i></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/leader-line.min.js"></script>
+<script src="~/js/game5.js"></script>

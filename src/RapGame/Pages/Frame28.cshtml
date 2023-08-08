@@ -1,0 +1,80 @@
+﻿@page
+@model RapGame.Pages.Frame28Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+}
+
+<div class="container-fluid">
+    <div class="row text-center animate__animated animate__fadeInUp animate__slow">
+        <div class="display-2"><b class="text-success">AAAA</b></div>
+    </div>
+
+    <div class="row">
+        <div class="col-6 animate__animated animate__fadeInUp animate__slow animate__delay-2s z-120">
+            <div class="row display-6 text-center">
+                <div class="pt-3">
+                    <b>I woke up this morning feeling really</b>
+
+                    <img id="firstrow" src="/img/border_cool.png" style="position:absolute;left: 1px; padding-left:45.6rem;display: none" />
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            cool
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>Every single day I have to go to</b>
+                    <img id="secondrow" src="/img/border_school.png" style="position:absolute;left: 1px; padding-left:41.8rem;display: none" />
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            school
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>I have loads of friends because I’m not </b>
+
+                    <img id="thirdrow" src="/img/border_cruel.png" style="position:absolute;left: 1px; padding-left:46.3rem;display: none" />
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            cruel
+                        </b>
+                    </b>
+                </div>
+                <br>
+                <div class="pt-3">
+                    <b>And in the summer holidays we jump in a  </b>
+
+                    <img id="fourthrow" src="/img/border_pool.png" style="position:absolute;left: 1px; padding-left:48rem;display: none" />
+                    <b>
+                        <b class="text-success border border-0 border-success rounded-pill rounded-3 p-1">
+                            pool
+                        </b>
+                    </b>
+                </div>
+            </div>
+
+            <div class="row pt-3">
+                <div class="col text-center z-110">
+                    <img class="img w-40" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-6 align-self-center">
+            <div class="display-2 text-center animate__animated animate__fadeInUp animate__slower animate__delay-5s">
+                <b class="pt-3">Every single last word</b> <br />
+                <b class="pt-3">rhymes with each</b> <br />
+                <b class="pt-3">other so this would be</b> <br />
+                <b>called an <label class="text-success">A A A A</label></b> <br />
+                <b>rhyme scheme.</b>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/frame28.js"></script>
+

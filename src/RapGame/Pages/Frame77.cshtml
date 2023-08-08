@@ -1,0 +1,18 @@
+﻿@page
+@model RapGame.Pages.Frame77Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    }
+
+<div class="container pt-5 animate__animated animate__fadeOut animate__slowest">
+    <div class="row">
+        <div class="col-6">
+            <img src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])"/>
+        </div>
+
+        <div class="col-6 display-1 align-self-center">
+            <b>Good luck on your journey!</b>
+        </div>
+    </div>
+</div>

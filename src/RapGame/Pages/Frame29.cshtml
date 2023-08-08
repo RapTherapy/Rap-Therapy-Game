@@ -1,0 +1,48 @@
+﻿@page
+@model RapGame.Pages.Frame29Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col text-center">
+            <div class="display-1 animate__animated animate__fadeInUp animate__slow"><b>@(Model.isPageHaveFullText ? Model.GameData.FrameText : Model.GameData.AlternativeFrameText)</b></div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-5">
+        <div class="col @(Model.isPageHaveFullText ? "animate__animated animate__fadeInUp animate__delay-2s z-120" : "animate__animated animate__fadeInUp z-120")"  style="@(Model.isPageHaveFullText ? "": "height:12rem")">
+            <div id="sentensGame2" class="row text-center @(Model.isPageHaveFullText ? (Model.FrameNumber!=29?"display-5":"display-6"): "display-4") mt-5">
+                @foreach (var item in Model.GameData.Sentences)
+                {
+                    <div id="@($"{item.LastWord}:{item.SentenceDuration}")" class="pt-3  @(Model.isPageHaveFullText ? "": "d-none display-3 pt-5")"><b>@item.SentenceText</b> <b style="color:@item.LastWordTextColor">@item.LastWord</b></div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="@(Model.FrameNumber==29?"row pt-4 z-120":"row pt-4")">
+        <div class="@(Model.FrameNumber!=29?"offset-4 col-4":"offset-3 col-6") text-center animate__animated animate__fadeInUp animate__delay-2s z-90">
+            <img class="img w-30" src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])">
+        </div>
+
+        <div class="col-3 align-self-center animate__animated animate__fadeInUp animate__delay-2s">
+            <button id="startBtnGame2" class="btn" onclick="@($"playAudioForGame2('{mediaHelper.GetMediaPath(Model.GameData.PathToSound)}', '{Model.isPageHaveFullText}')")"><img style="width:200px; height:200px"  src="~/img/gameSound.png"></button>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <form method="post" asp-page="Frame29">
+        <button id="nextBtn" class="btn btn-lg btn-dark mt-1" disabled style="font-size:50px" type="submit" asp-page-handler="GoToNextPage">
+            Next
+        </button>
+    </form>
+</div>
+
+<script src="~/js/game2.js"></script>
+

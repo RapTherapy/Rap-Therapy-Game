@@ -1,0 +1,91 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame4Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    if (Model.FrameNumber == 15 || Model.FrameNumber == 13)
+    {
+        ViewBag.ShowButtom = false;
+    }
+}
+<div class= @(Model.FrameNumber ==15?"container-lg": "container-lg z-100")>
+    <div class="row h-100 align-items-center">
+        <div   class=" @(Model.FrameNumber ==13||Model.FrameNumber ==11||Model.FrameNumber ==12||Model.FrameNumber ==15?"": "z-140")  @(Model.FrameNumber ==21?"col-8": "col-9")">
+            <div class="row">
+                @if (@Model.FrameNumber == 15)
+                {
+                    <div id="lastAnimation" class="animate__animated animate__fadeIn col test">
+                        @Html.Raw(Model.TextForFrame)
+                    </div>
+                }
+                else
+                {
+                    <div id="lastAnimation"  class=" @(Model.FrameNumber ==12?"animate__animated animate__fadeIn col z-120": "animate__animated animate__fadeIn col")">
+                        @Html.Raw(Model.TextForFrame)
+                    </div>
+                }
+            </div>
+            @if (@Model.FrameNumber>=11 &&  @Model.FrameNumber<=13 )
+            {
+                <div class="container text-center border border-primary border-3 w-60 borderblue">
+                    <div class="row pt-2">
+                        <div class="display-3"><b>Right now I am feeling</b></div>
+                    </div>
+                    <div class="row  justify-content-center pt-5">
+                        <datalist id="tickmarks" class="list w-75">
+                            <option value="10" label="1" class="h2"></option>
+                            <option value="20" label="2" class="h2"></option>
+                            <option value="30" label="3" class="h2"></option>
+                            <option value="40" label="4" class="h2"></option>
+                            <option value="50" label="5" class="h2"></option>
+                            <option value="60" label="6" class="h2"></option>
+                            <option value="70" label="7" class="h2"></option>
+                            <option value="80" label="8" class="h2"></option>
+                            <option value="90" label="9" class="h2"></option>
+                            <option value="100" label="10" class="h2"></option>
+                        </datalist>
+                    </div>
+                    <div class="justify-content-center pt-5">
+                        <input type="range" class="w-75" max="10" min="1" value="5" @(Model.FrameNumber == 13 ? "" : "disabled=\"disabled\"") id="myRange">
+                    </div>
+                </div>
+            }
+        </div>
+
+           <div class="z-110  @(Model.FrameNumber ==21?"col-4": "col-3")"> 
+               <div class="animate__animated animate__fadeIn">
+            <img class="img w-40 preserve-width" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+            </div>           
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="NextPage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background-color: #b4adc9;border-radius: 30px;">
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col text-center display-5">
+                            <b>I'm ready to move on</b>
+                        </div>
+                    </div>
+                      <input type="hidden" name="bookId" id="valueofrange" value="" />
+                      <div class="row mt-3">
+                          <div class="col  text-center ">
+                              <button type="button" class="btn btn-success"  style="border-radius: 25px" onclick="transition_frame14()"><b class="text-dark"  style="font-size:2rem">Confirm</b></button>
+                          </div>
+                      </div>
+                      <div class="row mt-3 mb-1sit">
+                          <div class="col  text-center ">
+                               <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="border-radius: 25px; box-si-12ing:border-box"><b class="text-dark" style="font-size:2rem" >Go back to feelings indicator</b></button>
+                          </div>
+                      </div>
+                </div>               
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+<script src="~/js/range_frame17.js"></script>
+    <script src="~/js/game1.js"></script>

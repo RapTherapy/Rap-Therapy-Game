@@ -1,0 +1,85 @@
+﻿@page
+@model RapGame.Pages.Frame66Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    ViewBag.ShowButtom = false;
+}
+
+
+<div class="container-fluid z-130">
+    <div class="row">
+        <div id="song" class="offset-1 col-5">
+            @foreach (var couplet in Model.GameData.Couplet)
+            {
+                        <div class="row pt-5">
+                    @foreach (var line in couplet.Line)
+                    {
+                                        <div>
+                                            <div style="float: left; font-size:1.8rem">@line.Text</div>
+                                                    <div id="@line.LineId" style="float: left; width:8rem; height: 2.3rem; font-size:2.2rem" class="border-bottom border-dark ms-2 text-center" ondrop="drop(event)" ondragover="allowDrop(event)" data-used="false"></div>
+                            @if (line.LineId == 24)
+                                                    {                                                   
+                                                                               <div style="float: left; font-size:1.8rem">”</div>
+                                                    }
+                                        </div>
+                    }
+                        </div>
+            }
+        </div>
+
+        <div class="col-6 ">
+            <div class="row display-4">
+                <div class="col-8 mb-5">
+                <b>
+                Complete the 16 bar rap using the <label class="text-success">AAAA</label> rhyme scheme
+                </b>
+                </div>
+                </div>            
+              <div id="words" class="row mt-5" ondragover="allowDrop(event)" style="-webkit-user-select: none;">
+                @foreach (var word in Model.GameData.Word)
+                {                     
+                                                    <div id="wn:@word.WordId" class="@(word.WordValue.Length > 5 ? (word.WordValue.Length > 8 ? "col-4" : "col-3") : "col-2")  borderblack text-success border border-dark m-2 text-center m-1" draggable=true ondragstart=drag(event) style="font-size:55px"><b>@word.WordValue</b></div>
+                }         
+            </div>       
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="ModalErrorNotAllWordsUsed" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Please use all of the words</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Are you sure? <br>Try again.</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalWin" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>You are win.</i></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute bottom-0 end-0 pb-1 pe-1">
+    <button style="font-size:50px" id="sumbmitBtn" class="btn btn-lg btn-dark mt-1" type="submit" onclick="isGameEnd()">
+        Next
+    </button>
+</div>
+
+<script src="~/js/game4.js"></script>

@@ -1,0 +1,79 @@
+﻿@page
+@model RapGame.Pages.Frame22Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowLogoutButtom = true;
+}
+<div class="animate__animated animate__fadeInUp">
+    <div class="container text-center border border-primary border-3 w-60 borderblue " style="min-height: 350px;">
+        <div class="row pt-2">
+            <div class="display-3"><b>Right now I am feeling</b></div>
+        </div>
+        <div class="row  justify-content-center pt-5">
+            <datalist id="tickmarks" class="list w-75">
+                <option data-range-value="1" value="10" label="1" class="h2"></option>
+                <option data-range-value="2" value="20" label="2" class="h2"></option>
+                <option data-range-value="3" value="30" label="3" class="h2"></option>
+                <option data-range-value="4" value="40" label="4" class="h2"></option>
+                <option data-range-value="5" value="50" label="5" class="h2"></option>
+                <option data-range-value="6" value="60" label="6" class="h2"></option>
+                <option data-range-value="7" value="70" label="7" class="h2"></option>
+                <option data-range-value="8" value="80" label="8" class="h2"></option>
+                <option data-range-value="9" value="90" label="9" class="h2"></option>
+                <option data-range-value="10" value="100" label="10" class="h2"></option>
+            </datalist>
+        </div>
+        <div class=" justify-content-center pt-5">
+            <input type="range" class="w-75" max="10" min="1" value="5" style="accent-color:black" id="myRange">
+        </div>
+    </div>
+
+
+    <div class="container pt-3">
+        <div class="row">
+            <div class="col-xl-4 col-md-4 offset-md-2 offset-xl-0 h-50 border border-danger border-3 text-center borderred display-5 " style=" margin-top: 8rem">
+                <b>
+                    Slide the cursor to
+                    <br>
+                    show how you
+                    <br />
+                    currently feel.
+                </b>
+            </div>
+
+            <div class="col-xl-4 col-md-4">
+                <img class="rounded mx-auto d-block img w-30"
+                     src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="NextPage" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content" style="background-color: #b4adc9;border-radius: 30px;">
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class=" col text-center display-5">
+                            <b>I'm ready to move on</b>
+                        </div>
+                    </div>
+                    <input type="hidden" name="bookId" id="valueofrange" value="" />
+                    <div class="row mt-3">
+                        <div class="col  text-center ">
+                            <button type="button" class="btn btn-success" style="border-radius: 25px" onclick="transition_frame22()"><b class="text-dark" style="font-size:2rem">Confirm</b></button>
+                        </div>
+                    </div>
+                    <div class="row mt-3 mb-1sit">
+                        <div class="col  text-center ">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal" style="border-radius: 25px; box-sizing:border-box"><b class="text-dark" style="font-size:2rem">Go back to feelings indicator</b></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/range_frame22.js"></script>

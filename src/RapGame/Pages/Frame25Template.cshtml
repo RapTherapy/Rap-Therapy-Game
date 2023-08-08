@@ -1,0 +1,38 @@
+﻿@page
+@model ElectronRazorPage.Pages.Frame25Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    if (Model.FrameNumber == 25)
+    {
+        ViewBag.ShowButtom = false;
+        ViewBag.ShowMicsCounter = true;
+    }
+    else
+    {
+        ViewBag.ShowMicsCounter = true;
+    }
+}
+
+
+<div class="container-fluid">
+    @if (@Model.FrameNumber == 25)
+    {
+        <div class="row mt-5 animate__animated animate__fadeInUp  animate__slower">
+            @Html.Raw(Model.HeaderForFrame)
+        </div>
+    }
+    else
+    {
+        <div class="row animate__animated animate__fadeInUp  animate__slower">
+            @Html.Raw(Model.HeaderForFrame)
+        </div>
+    }
+    <div class="row pt-2 h-100 align-items-center animate__animated animate__fadeInUp  animate__slower animate__delay-2s">
+        <div class="col-4 ps-"><img class="img-fluid w-100" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" /></div>
+        @Html.Raw(Model.TextForFrame)
+
+    </div>
+</div>
+
+

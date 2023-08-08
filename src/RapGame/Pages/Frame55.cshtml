@@ -1,0 +1,21 @@
+﻿@page
+@model RapGame.Pages.Frame55Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowMicsCounter = true;
+    }
+
+<div class="container-fluid animate__animated animate__fadeInUp animate__slow">
+    <div class="row align-items-center pt-5">
+        <div class="col-lg-8 col-md-4  display-1 pt-5 text-center">
+            <b class="pt-5">You now have to listen the rap clips <br> 
+            and choose which rhyme scheme <br>
+            you think is being used.</b>
+        </div>
+
+        <div class="col-lg-4 col-md-8  pt-5">
+            <img class="rounded mx-auto d-block"  src="@mediaHelper.GetMediaPath(@Model.MediaData.PathsToImages[0])"/>
+        </div>
+    </div>
+</div>

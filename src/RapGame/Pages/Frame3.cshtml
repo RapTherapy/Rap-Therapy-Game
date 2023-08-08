@@ -1,0 +1,53 @@
+﻿@page
+@model ElectronRazorPage.Pages.YourDetailsModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowLogoutButtom = false;
+    ViewBag.ShowSoundButton = false;
+    ViewBag.ShowButtom = false;
+}
+@Html.AntiForgeryToken()
+<div class="position-absolute top-0 start-0 h-100 animate__animated animate__fadeIn animate__slow" style="max-width:200px">
+   
+                <img class="img-fluid h-25 preserve-width" style="max-width:200px" src="~/img/MYSTIC_MICS.png" />
+                <img class="img-fluid h-25 preserve-width" style="max-width:200px" src="~/img/RAP_GIRLs.png" />
+                <img class="img-fluid h-25 preserve-width" style="max-width:200px" src="~/img/RAPPING_RABBITs.png" />
+                <img class="img-fluid h-25 preserve-width" style="max-width:200px" src="~/img/PROPHs.png" />
+</div>
+
+<div class="container text-center loginwindow animate__animated animate__fadeIn animate__slow">
+    <div class="row justify-content-center">
+        <div class="col">
+            <img class="img w-30" src="~/img/rap therapy logo.png" />
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-5">
+        <div class="col-6 border border-3 border-dark">
+            <div class="text-center p-5">
+                <div class="row" style="font-size:60px">
+                    <input id="usernameInput" class="text-center" name="username" type="text" placeholder="Username" style="background-color: #F0E2B6;" onkeypress="handleKeyPress(event)"/>
+                </div>
+
+                <div class="row pt-3" style="font-size:60px">
+                    <input id="passwordInput" class="text-center" name="password" type="password" placeholder="Password" style="background-color: #F0E2B6;" onkeypress="handleKeyPress(event)"/>
+                </div>
+
+                <div id="loginErrorMessage" class="row pt-3 text-danger d-none justify-content-md-center" style="font-size:50px"></div>
+
+                <div class="row pt-3" style="font-size:60px">
+                    <button style="font-size:60px;background-color:rgb(0, 176, 80)" class="btnborder border-3 border-dark" type="submit" onclick="login()">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="position-absolute top-0 end-0 h-100 animate__animated animate__fadeIn animate__slow" style="max-width:200px">
+   
+            <img class="img-fluid h-25" style="max-width:200px" src="~/img/MYSTIC_MICS.png" />
+            <img class="img-fluid h-25" style="max-width:200px" src="~/img/RAP_GIRLs.png" />
+            <img class="img-fluid h-25" style="max-width:200px"  src="~/img/RAPPING_RABBITs.png" />
+            <img class="img-fluid h-25" style="max-width:200px" src="~/img/PROPHs.png" />
+</div>

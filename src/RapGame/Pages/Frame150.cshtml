@@ -1,0 +1,51 @@
+﻿@page
+@model RapGame.Pages.Frame150Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowMicsCounter = true;
+}
+<div class="container-fluid text-center h-100  ">
+    <div class="row display-5">
+        <div class="col-xl-12 mt-4 display-3 col-md-6 text-center animate__animated animate__fadeInUp animate__slower">
+            <b>Gilberto is <b class="text-success">as</b> tall <b class="text-success">as</b> a giraffe</b>
+        </div>
+    </div>
+    <div class="row pt-5 h-100  mt-5 ">
+        <div class=" col-xl-8 align-items-center">
+            <div class="mt-5 row mb-5 animate__animated animate__fadeInUp animate__delay-2s animate__slower">
+                <div class="col-12 display-4 text-start z-110">
+                    <b>
+                        We know that Gilberto isn’t really as
+                        <br>
+                        tall as a giraffe…
+                    </b>
+                </div>
+            </div>
+
+            <div class="row mt -5 pt-5 animate__animated animate__fadeInUp animate__delay-4s animate__slower">
+                <div class="mt-5 col-7 offset-5 display-4 z-110">
+                    <b>
+                        But…
+                    </b>
+                </div>
+            </div>
+        </div>
+        <div class=" col-xl-4  animate__animated animate__fadeInUp animate__slower">
+            <img class=" m-3 w-26" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+
+    </div>
+    <div class="row animate__animated animate__fadeInUp animate__delay-6s animate__slower">
+        <div class="col-6 offset-6  display-4 text-start ps-5">
+            <b >
+                we are saying it to  <a class="z-102" href="Frame136?FrameNumber=151">overexaggerate</a> our
+                <br>
+                point so that everyone knows how tall
+                <br>
+                ​​Gilberto actually is!
+            </b>
+        </div>
+    </div>
+</div>
+

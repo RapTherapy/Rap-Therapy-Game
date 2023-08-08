@@ -1,0 +1,21 @@
+﻿@page
+@model RapGame.Pages.Frame78Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    }
+
+<div class="container animate__animated animate__fadeInUp animate__slow">
+    <div class="row justify-content-center display-2">
+        <div class="col text-center">
+            <b>Let’s see if we can write some</b> <br />
+            <b class="pt-3">raps about different emotions</b>
+        </div>
+    </div>
+
+    <div class="row justify-content-center pt-5">
+        <div class="col text-center">
+            <img class="img w-30" src="@mediaHelper.GetMediaPath(Model.MediaData.PathsToImages[0])" />
+        </div>
+    </div>
+</div>

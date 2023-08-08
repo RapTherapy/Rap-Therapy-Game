@@ -1,0 +1,79 @@
+﻿@page
+@model RapGame.Pages.Frame138Model
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowMicsCounter = true;
+}
+<link rel="stylesheet" href="~/css/game1.css">
+<style>
+    .container2 {
+        width: 12rem;
+        height: 24rem;
+        margin-top: 7rem;
+        margin-left: 18rem;
+        transform: rotateY(0deg) rotate(45deg);
+    }
+</style>
+<div class="container text-center h-100 mt-5">
+    <div class="row">
+        <div class="offset-xl-4 col-xl-4 text-center align-self-center">
+            <div class="display-5 mb-4">
+                Click the timer to begin!
+            </div>
+            <div class>
+               @* <button id="Timer" onclick="startTimer()" style="font-size:30px; width:100px; height:100px; border: none; background: none;" class="mb-2">@Model.Data.Time</button>*@
+               <button  style="border: none;background: none; height:100px; margin-bottom:3rem;" onclick="start(this)"><div id="app"></div></button>
+            </div>
+        </div>  
+    </div>
+    <div class="row mt-4">
+        <div class="col-xl-4 offset-xl-4 borderred">
+            <b id="textgame" class="display-5 text-dark">Click on the internal <br>rhyme</b>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col-10 offset-1 mt-5 ">
+
+            @for (int i = 0; i < @Model.Data.CountOfline; i++)
+            {
+                    <div class="display-1 text-center">
+                        <b id="string+@i" class="answer" style="cursor: pointer"> ​</b>
+                    </div>
+            }
+        </div>
+    </div>
+</div>
+
+<div id="bonus" class="position-absolute top-0 start-0 pt-2 pe-2 text d-none">
+    <div class=" row container2 borderred text-center ">
+
+        <div class=" col-8 display-6" style="transform: rotate(-90deg); padding-top:11rem;">
+            <b> BONUS <br> POINT!!!​</b>
+        </div>
+    </div>
+</div>
+@*<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content" style="background-color: #F0E2B6">
+            <div class="modal-body text-center">
+                <h2>Error Answer, try again</h2>
+            </div>
+            <div class="modal-footer" style="background-color: #F5DEB3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>*@
+<div class="modal fade" id="ModalErrorAnswer" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg" style="width: 40rem">
+        <div class="modal-content" style="background-color: red">
+            <div class="modal-body text-center">
+                <div class="display-5" style="color: black"><b>Are you sure? <br>Try again.</b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/game6.js"></script>

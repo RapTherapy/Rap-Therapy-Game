@@ -1,0 +1,21 @@
+@page
+@model IndexModel
+@inject RapGame.Utils.MediaHelper mediaHelper
+@{
+    ViewData["Title"] = Model.MediaData.Title;
+    ViewBag.ShowLogoutButtom = false;
+    ViewBag.ShowButtom = false;
+    ViewBag.ShowSoundButton = false;
+}
+
+<div id="logo" class="container d-none z-120 mt-5">
+    <div class="row justify-content-center">
+        <img class="img w-50" src="~/img/rap therapy logo.png" />
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-10">
+        <img  src="~/img/logo.png" />
+        </div>
+</div>
+
