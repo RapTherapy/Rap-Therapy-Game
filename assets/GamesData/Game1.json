@@ -1,0 +1,98 @@
+[
+  {
+    "IsGameWithTimer": "true",
+    "LeftSideWord": "Locked",
+    "RightSideWord": "Climb",
+    "Words": [
+      {
+        "WordId": "L",
+        "WordValue": "Knocked"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Time"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Nine"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Shocked"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Chopped"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Hopped"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Shine"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Mine"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Rocked"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Divine"
+      }
+    ],
+    "TextForFrame": "Click the timer to begin!"
+  },
+  {
+    "IsGameWithTimer": "false",
+    "LeftSideWord": "Fair",
+    "RightSideWord": "Sad",
+    "Words": [
+      {
+        "WordId": "L",
+        "WordValue": "Bear"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Mad"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Glad"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Pad"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Chair"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Share"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Pair"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Lad"
+      },
+      {
+        "WordId": "L",
+        "WordValue": "Care"
+      },
+      {
+        "WordId": "R",
+        "WordValue": "Dad"
+      }
+    ],
+    "TextForFrame": "Place the words in green underneath the word that you think it rhymes with."
+  }
+]

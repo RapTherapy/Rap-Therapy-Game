@@ -1,0 +1,22 @@
+[
+  {
+    "PathToTheAudioFile": "Sounds//SCHOOL - AAAA.wav",
+    "Answer": "AAAA"
+  },
+  {
+    "PathToTheAudioFile": "Sounds//KORBZ - AABB.wav",
+    "Answer": "AABB"
+  },
+  {
+    "PathToTheAudioFile": "Sounds//TRICEY - AAAA.wav",
+    "Answer": "AAAA"
+  },
+{
+    "PathToTheAudioFile": "Sounds//SAM - ABAB.wav",
+    "Answer": "ABAB"
+  },
+{
+    "PathToTheAudioFile": "Sounds//YD - ABAB.wav",
+    "Answer": "ABAB"
+  }
+]

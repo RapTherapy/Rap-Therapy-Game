@@ -1,0 +1,175 @@
+[
+  {
+    "EmotionForRap": "Happy",
+    "EnlargedText": true,
+    "RhymeScheme": "AABB",
+    "SentenceDuration": 4,
+    "IsPageContainAdditionalContent": false,
+    "PathToAudioFileFrame80": "Sounds/HAPPY.wav",
+    "PathToAudioFileFrame82": "Sounds/frame 83.wav",
+    "PathToAudioFileFrame83": "Sounds/frame 83(2).wav",
+    "PathToImages": "Images/Happy.png",
+    "Sentences": [
+      {
+        "SentenceText": "When I’m listening to music I feel really ",
+        "LastWord": "happy",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "It always calms me down so I don’t feel ",
+        "LastWord": "snappy",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "Dancing everywhere I dance around ",
+        "LastWord": "town",
+        "LastWordTextColor": "#8B008B"
+      },
+      {
+        "SentenceText": "Music in my ears I can never feel ",
+        "LastWord": "down",
+        "LastWordTextColor": "#8B008B"
+      }
+    ]
+  },
+  {
+    "EmotionForRap": "Proud",
+    "RhymeScheme": "AAAA",
+    "EnlargedText": true,
+    "SentenceDuration": 4,
+    "IsPageContainAdditionalContent": false,
+    "PathToAudioFileFrame80": "Sounds/PROUD.wav",
+    "PathToAudioFileFrame82": "Sounds/frame 91.wav",
+    "PathToAudioFileFrame83": "Sounds/frame 83(2).wav",
+    "PathToImages": "Images/Proud.png",
+    "Sentences": [
+      {
+        "SentenceText": "When I get a good grade, I feel really ",
+        "LastWord": "proud",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "The sky is really clear, there isn’t a dark ",
+        "LastWord": "cloud",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "If I’m really proud, I’m going to be ",
+        "LastWord": "loud",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "But I won’t be boastful that isn’t really ",
+        "LastWord": "allowed",
+        "LastWordTextColor": "#1E8449"
+      }
+    ]
+  },
+  {
+    "EmotionForRap": "Sad",
+    "RhymeScheme": "ABAB",
+    "EnlargedText": true,
+    "SentenceDuration": 4,
+    "IsPageContainAdditionalContent": false,
+    "PathToAudioFileFrame80": "Sounds/SAD.wav",
+    "PathToAudioFileFrame82": "Sounds/frame 99.wav",
+    "PathToAudioFileFrame83": "Sounds/frame 83(2).wav",
+    "PathToImages": "Images/Sad.png",
+    "Sentences": [
+      {
+        "SentenceText": "I know it’s okay if sometimes I feel ",
+        "LastWord": "sad",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "It’s okay because it won’t last ",
+        "LastWord": "forever",
+        "LastWordTextColor": "#8B008B"
+      },
+      {
+        "SentenceText": "Feeling down doesn’t make me ",
+        "LastWord": "bad",
+        "LastWordTextColor": "#1E8449"
+      },
+      {
+        "SentenceText": "Keep looking at the bright side I’m still very ",
+        "LastWord": "clever",
+        "LastWordTextColor": "#8B008B"
+      }
+    ]
+  },
+  {
+    "EmotionForRap": "Excited",
+    "RhymeScheme": "AABB",
+    "EnlargedText": false,
+    "SentenceDuration": 4,
+    "IsPageContainAdditionalContent": true,
+    "PathToAudioFileFrame80": "Sounds/EXCITED.wav",
+    "PathToAudioFileFrame82": "Sounds/frame 116.wav",
+    "PathToAudioFileFrame83": "Sounds/frame 83(2).wav",
+    "PathToImages": "Images/Excited.png",
+    "AdditionalContent": {
+      "RowNumberWithRefOnAdditionalContent": 4,
+      "CountOfFrameWithAdditionalContent": 2
+    },
+    "Sentences": [
+      {
+        "SentenceText": "When I go to my friend’s house I feel really ",
+        "LastWord": "excited",
+        "LastWordTextColor": "#000000"
+      },
+      {
+        "SentenceText": "Every time we meet, I feel really ",
+        "LastWord": "delighted",
+        "LastWordTextColor": "#000000"
+      },
+      {
+        "SentenceText": "When we play our games, he always makes a funny ",
+        "LastWord": "face",
+        "LastWordTextColor": "#000000"
+      },
+      {
+        "SentenceText": "I put my shoes on, do my lace and we ",
+        "LastWord": "race",
+        "LastWordTextColor": "#000000"
+      }
+    ]
+  },
+  {
+    "EmotionForRap": "Angry",
+    "RhymeScheme": "ABAB",
+    "EnlargedText": false,
+    "SentenceDuration": 4,
+    "IsPageContainAdditionalContent": true,
+    "PathToAudioFileFrame80": "Sounds/frame 122.wav",
+    "PathToAudioFileFrame82": "Sounds/frame 131.wav",
+    "PathToAudioFileFrame83": "Sounds/frame 83(2).wav",
+    "PathToImages": "Images/Angry.png",
+    "AdditionalContent": {
+      "RowNumberWithRefOnAdditionalContent": 3,
+      "CountOfFrameWithAdditionalContent": 1
+    },
+    "Sentences": [
+      {
+        "SentenceText": "Quite frankly, it’s ok to be ",
+        "LastWord": "angry",
+        "LastWordTextColor": "#000000"
+      },
+      {
+        "SentenceText": "As long as I can express ",
+        "LastWord": "myself",
+        "LastWordTextColor": "#000000"
+      },
+      {
+        "SentenceText": "Quite frankly, it’s ok to be ",
+        "LastWord": "angry",
+        "LastWordTextColor": "#000000"
+      },
+      {
+        "SentenceText": "Writing rap is good for my mental ",
+        "LastWord": "health",
+        "LastWordTextColor": "#000000"
+      }
+    ]
+  }
+]

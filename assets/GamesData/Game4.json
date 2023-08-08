@@ -1,0 +1,160 @@
+{
+  "PathToSoundFile": ["Sounds/frame 69.wav","Sounds/frame 70.wav","Sounds/frame 71.wav","Sounds/frame 72.wav"],
+  "Couplet": [
+    {
+      "CoupletNumber": 1,
+      "CoupletDuration": 10,
+      "Line": [
+        {
+          "LineId": "11",
+          "Text": "I was sitting in my"
+        },
+        {
+          "LineId": "12",
+          "Text": "Looking at my socks, I had an odd"
+        },
+        {
+          "LineId": "13",
+          "Text": "Some might think this is a"
+        },
+        {
+          "LineId": "14",
+          "Text": "However, me, I just didn’t"
+        }
+      ]
+    },
+    {
+      "CoupletNumber": 2,
+      "CoupletDuration": 10,
+      "Line": [
+        {
+          "LineId": "21",
+          "Text": "I was feeling"
+        },
+        {
+          "LineId": "22",
+          "Text": "I was chilling and relaxing, I didn’t feel"
+        },
+        {
+          "LineId": "23",
+          "Text": "Watching my TV then in walks my"
+        },
+        {
+          "LineId": "24",
+          "Text": "He said to me “you’re such a cool"
+        }
+      ]
+    },
+    {
+      "CoupletNumber": 3,
+      "CoupletDuration": 12,
+      "Line": [
+        {
+          "LineId": "31",
+          "Text": "I looked at the clock and realised the"
+        },
+        {
+          "LineId": "32",
+          "Text": "Big hand on the 12, small hand on the"
+        },
+        {
+          "LineId": "33",
+          "Text": "Out came the sun, it started to"
+        },
+        {
+          "LineId": "34",
+          "Text": "I ate up my cereal it tasted"
+        }
+      ]
+    },
+    {
+      "CoupletNumber": 4,
+      "CoupletDuration": 12,
+      "Line": [
+        {
+          "LineId": "41",
+          "Text": "The cereal was delicious, I was so"
+        },
+        {
+          "LineId": "42",
+          "Text": "I walked to my door because somebody"
+        },
+        {
+          "LineId": "43",
+          "Text": "Unlocked the door because it was"
+        },
+        {
+          "LineId": "44",
+          "Text": "Hey, it’s Rapping Rabbit, he hopped and he"
+        }
+      ]
+    }
+  ],
+
+  "Word": [
+    {
+      "WordId": "11",
+      "WordValue": "chair"
+    },
+    {
+      "WordId": "12",
+      "WordValue": "pair"
+    },
+    {
+      "WordId": "13",
+      "WordValue": "nightmare"
+    },
+    {
+      "WordId": "14",
+      "WordValue": "care"
+    },
+    {
+      "WordId": "21",
+      "WordValue": "glad"
+    },
+    {
+      "WordId": "22",
+      "WordValue": "mad"
+    },
+    {
+      "WordId": "23",
+      "WordValue": "dad"
+    },
+    {
+      "WordId": "24",
+      "WordValue": "lad"
+    },
+    {
+      "WordId": "31",
+      "WordValue": "time"
+    },
+    {
+      "WordId": "32",
+      "WordValue": "nine"
+    },
+    {
+      "WordId": "33",
+      "WordValue": "shine"
+    },
+    {
+      "WordId": "34",
+      "WordValue": "divine"
+    },
+    {
+      "WordId": "41",
+      "WordValue": "shocked"
+    },
+    {
+      "WordId": "42",
+      "WordValue": "knocked"
+    },
+    {
+      "WordId": "43",
+      "WordValue": "locked"
+    },
+    {
+      "WordId": "44",
+      "WordValue": "hopped"
+    }
+  ]
+}

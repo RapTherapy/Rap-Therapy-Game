@@ -1,0 +1,157 @@
+[
+  {
+    "Sentence": "As shiny",
+    "IsTheStartOfaSentence": true,
+    "PathToImage": "Images/Star.png",
+    "PathToAudio": "Sounds/frame 167.wav",
+    "PathToAdditionalAudio": "Sounds/frame 168.wav",
+    "Answers": [
+      {
+        "Answer": "like a computer",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "as a star",
+        "IsAnsweredCorrect": true
+      },
+      {
+        "Answer": "as a teacher",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "as a computer",
+        "IsAnsweredCorrect": false
+      }
+    ]
+  },
+  {
+    "Sentence": "As soft",
+    "IsTheStartOfaSentence": true,
+    "PathToImage": "Images/Pillow.png",
+    "PathToAudio": "Sounds/frame 169.wav",
+    "PathToAdditionalAudio": "Sounds/frame 170.wav",
+    "Answers": [
+      {
+        "Answer": "as a coconut",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "like person",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "as a pillow",
+        "IsAnsweredCorrect": true
+      },
+      {
+        "Answer": "like pillow",
+        "IsAnsweredCorrect": false,
+        "AlternativMessageForIncorrectAnswer": "Does that make sense, say it out loud"
+      }
+    ]
+  },
+  {
+    "Sentence": "Hot",
+    "IsTheStartOfaSentence": true,
+    "PathToImage": "Images/ChillyPepper.png",
+    "PathToAudio": "Sounds/frame 171.wav",
+    "PathToAdditionalAudio": "Sounds/frame 172.wav",
+    "Answers": [
+      {
+        "Answer": "like a chilli",
+        "IsAnsweredCorrect": true
+      },
+      {
+        "Answer": "as the sky",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "because of chillies",
+        "IsAnsweredCorrect": false,
+        "AlternativMessageForIncorrectAnswer": "Is this a simile, what words do you need to look for"
+      },
+      {
+        "Answer": "like dirt",
+        "IsAnsweredCorrect": false
+      }
+    ]
+  },
+  {
+    "Sentence": "a rock",
+    "IsTheStartOfaSentence": false,
+    "PathToImage": "Images/Rock.png",
+    "PathToAudio": "Sounds/frame 173.wav",
+    "PathToAdditionalAudio": "Sounds/frame 174.wav",
+    "Answers": [
+      {
+        "Answer": "As angry as",
+        "IsAnsweredCorrect": false,
+        "AlternativMessageForIncorrectAnswer": "What does a rock feel like"
+      },
+      {
+        "Answer": "As hard as",
+        "IsAnsweredCorrect": true
+      },
+      {
+        "Answer": "As happy as a",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "Soft like a",
+        "IsAnsweredCorrect": false
+      }
+    ]
+  },
+  {
+    "Sentence": "Sharp",
+    "IsTheStartOfaSentence": true,
+    "PathToImage": "Images/Razor.png",
+    "PathToAudio": "Sounds/frame 175.wav",
+    "PathToAdditionalAudio": "Sounds/frame 176.wav",
+    "Answers": [
+      {
+        "Answer": "like the iron",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "as a person shaving",
+        "IsAnsweredCorrect": false,
+        "AlternativMessageForIncorrectAnswer": "Is a person shaving sharp? Try again"
+      },
+      {
+        "Answer": "like a razor",
+        "IsAnsweredCorrect": true
+      },
+      {
+        "Answer": "like a gorilla",
+        "IsAnsweredCorrect": false
+      }
+    ]
+  },
+  {
+    "Sentence": "a donut",
+    "IsTheStartOfaSentence": false,
+    "PathToAudio": "Sounds/frame 177.wav",
+    "PathToAdditionalAudio": "Sounds/frame 178.wav",
+    "PathToImage": "Images/Doughnuts.png",
+    "Answers": [
+      {
+        "Answer": "Crazy like",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "Sharp like",
+        "IsAnsweredCorrect": false
+      },
+      {
+        "Answer": "As sweet as",
+        "IsAnsweredCorrect": true
+      },
+      {
+        "Answer": "As painful like",
+        "IsAnsweredCorrect": false
+      }
+    ]
+  }
+]
+ 

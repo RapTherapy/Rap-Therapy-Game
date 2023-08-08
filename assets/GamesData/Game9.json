@@ -1,0 +1,263 @@
+[
+  {
+    "EmotionForRap": "Happy",
+    "RhymeScheme": "AAAA",
+    "IsPageContainAdditionalContent": false,
+    "PathToAudioFileFrame190": "",
+    "PathToAudioFileFrame191": "Sounds/Game9/Frame 191(Happy).wav",
+    "PathToAudioFileFrame192": "",
+    "ArrayAnswerId": [ 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "Words": [
+      {
+        "Id": "1",
+        "Word": "great",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "create",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "late",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "debate",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "smile",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "style",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "mile",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "while",
+        "Color": "#1E8449"
+      }
+    ]
+  },
+  {
+   "EmotionForRap": "Proud",
+    "RhymeScheme": "AABB",
+    "IsPageContainAdditionalContent": false,
+    "PathToAudioFileFrame190": "",
+    "PathToAudioFileFrame191": "",
+    "PathToAudioFileFrame192": "",
+    "ArrayAnswerId": [1,1,2,2,1,1,2,2],
+    "Words": [
+      {
+        "Id": "1",
+        "Word": "crowd",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "proud",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "2",
+        "Word": "rap",
+        "Color": "#8B008B"
+      },
+      {
+        "Id": "2",
+        "Word": "snap",
+        "Color": "#8B008B"
+      },
+      {
+        "Id": "1",
+        "Word": "superstar",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "1",
+        "Word": "car",
+        "Color": "#1E8449"
+      },
+      {
+        "Id": "2",
+        "Word": "story",
+        "Color": "#8B008B"
+      },
+      {
+        "Id": "2",
+        "Word": "glory",
+        "Color": "#8B008B"
+      }
+    ]
+  },
+  {
+    "EmotionForRap": "Sad",
+    "RhymeScheme": "ABAB",
+    "IsPageContainAdditionalContent": true,
+    "PathToAudioFileFrame190": "",
+    "PathToAudioFileFrame191": "",
+    "PathToAudioFileFrame192": "",
+    "ArrayAnswerId": [ 1, 2, 1, 2, 1, 2, 1, 2 ],
+    "Words": [
+      {
+
+        "Id": "1",
+        "Word": "sad",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "rain",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "down",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "wrong",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "glad",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "pain",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "clown",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "song",
+        "Color": "#000000"
+      }
+      
+    ]
+  },
+  {
+    "EmotionForRap": "Excited",
+    "RhymeScheme": "AAAA",
+    "IsPageContainAdditionalContent": true,
+    "PathToAudioFileFrame190": "",
+    "PathToAudioFileFrame191": "",
+    "PathToAudioFileFrame192": "",
+    "ArrayAnswerId": [ 1, 1, 1, 1, 1, 1, 1, 1 ],
+    "Words": [
+      {
+
+        "Id": "1",
+        "Word": "excited",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "delighted",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "united",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "provided",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "dream",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "team",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "supreme",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "scream​",
+        "Color": "#000000"
+      }
+
+    ]
+  },
+  {
+    "EmotionForRap": "Angry",
+    "RhymeScheme": "AABB",
+    "IsPageContainAdditionalContent": true,
+    "PathToAudioFileFrame190": "",
+    "PathToAudioFileFrame191": "",
+    "PathToAudioFileFrame192": "",
+    "ArrayAnswerId": [ 1, 1, 2, 2, 1, 1, 2, 2 ],
+    "Words": [
+      {
+
+        "Id": "1",
+        "Word": "angry",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "smart",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "fire",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "mood",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "cranky",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "heart",
+        "Color": "#000000"
+      },
+      {
+        "Id": "2",
+        "Word": "desire",
+        "Color": "#000000"
+      },
+      {
+        "Id": "1",
+        "Word": "food​",
+        "Color": "#000000"
+      }
+
+    ]
+  }
+]
